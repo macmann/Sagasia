@@ -1,24 +1,29 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { Container } from "@/components/layout/Container";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
+import { Container } from "@/components/Container";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: {
-    default: "Scaffold",
-    template: "%s | Scaffold"
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`
   },
-  description: "Next.js (App Router) + TypeScript + Tailwind + MDX scaffold"
+  description: siteConfig.description
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-white text-neutral-900">
-        <Header />
-        <Container className="py-10">{children}</Container>
-        <Footer />
+      <body className="min-h-screen bg-white font-sans text-slate-900 antialiased">
+        <div className="flex min-h-screen flex-col">
+          <Header />
+          <main className="flex-1">
+            <Container className="py-12 sm:py-16">{children}</Container>
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
