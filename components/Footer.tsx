@@ -11,10 +11,25 @@ export function Footer() {
           <div className="space-y-3">
             <div className="text-lg font-semibold">{siteConfig.name}</div>
             <p className="text-sm text-slate-600">{siteConfig.description}</p>
-            <p className="text-sm text-slate-600">{siteConfig.contactEmail}</p>
+            <div className="space-y-1 text-sm text-slate-600">
+              <p>
+                <span className="font-semibold text-slate-900">Email:</span>{" "}
+                <a className="hover:text-slate-900" href={`mailto:${siteConfig.email}`}>
+                  {siteConfig.email}
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-slate-900">Office:</span>{" "}
+                {siteConfig.officeLocation}
+              </p>
+              <p>
+                <span className="font-semibold text-slate-900">Coverage:</span>{" "}
+                {siteConfig.coverage}
+              </p>
+            </div>
           </div>
           <div className="space-y-3 text-sm">
-            <div className="font-semibold text-slate-900">Company</div>
+            <div className="font-semibold text-slate-900">Quick links</div>
             <ul className="space-y-2 text-slate-600">
               {footerNav.company.map((item) => (
                 <li key={item.href}>

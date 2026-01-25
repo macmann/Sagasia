@@ -1,4 +1,5 @@
 export const primaryNav = [
+  { title: "Home", href: "/" },
   { title: "About", href: "/about" },
   { title: "Services", href: "/services" },
   { title: "Industries", href: "/industries" },
@@ -8,6 +9,7 @@ export const primaryNav = [
 
 export const footerNav = {
   company: [
+    { title: "Home", href: "/" },
     { title: "About", href: "/about" },
     { title: "Services", href: "/services" },
     { title: "Industries", href: "/industries" }

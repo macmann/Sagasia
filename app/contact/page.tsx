@@ -72,7 +72,7 @@ export default function ContactPage() {
           <Card className="space-y-4 bg-slate-50">
             <div>
               <h2 className="text-xl font-semibold text-slate-900">Contact</h2>
-              <p className="text-sm text-slate-600">{siteConfig.contactEmail}</p>
+              <p className="text-sm text-slate-600">{siteConfig.email}</p>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-slate-900">What to expect</h3>
