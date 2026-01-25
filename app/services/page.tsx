@@ -1,8 +1,82 @@
 import Link from "next/link";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
-import { services } from "@/lib/constants";
 import { buttonClasses } from "@/components/Button";
+
+const services = [
+  {
+    id: "strategy-growth-advisory",
+    title: "Strategy & Growth Advisory",
+    description:
+      "We partner with leadership teams to sharpen growth priorities, align decision-makers, and define the moves that matter most. Our advisory work combines board-level insight with grounded market realities, so strategies are both ambitious and executable.",
+    supports: [
+      "Corporate and business unit strategy",
+      "Growth roadmap and market prioritization",
+      "Investment thesis and portfolio strategy",
+      "New business model assessment",
+    ],
+  },
+  {
+    id: "market-entry-expansion",
+    title: "Market Entry & Expansion",
+    description:
+      "We help clients validate demand, size opportunities, and determine the best entry pathway for Asia-Pacific markets. Each engagement translates local market signals into a clear route-to-market plan and partner strategy.",
+    supports: [
+      "Market sizing and demand validation",
+      "Go-to-market and route-to-market design",
+      "Partner, distributor, or acquisition screening",
+      "ASEAN expansion planning",
+    ],
+  },
+  {
+    id: "competitor-market-intelligence",
+    title: "Competitor & Market Intelligence",
+    description:
+      "Our intelligence programs decode competitive moves, pricing dynamics, and customer behavior shifts across the region. Leaders use these insights to defend market share, reposition offerings, and anticipate disruption.",
+    supports: [
+      "Competitor benchmarking and positioning",
+      "Pricing and value-chain analysis",
+      "Channel and customer behavior mapping",
+      "Market structure and dynamics assessment",
+    ],
+  },
+  {
+    id: "commercial-due-diligence",
+    title: "Commercial Due Diligence & Opportunity Assessment",
+    description:
+      "We deliver independent diligence that validates market attractiveness, demand reality, and key risks before capital is committed. Investors and corporate development teams rely on our analysis to move forward with confidence.",
+    supports: [
+      "Commercial due diligence for M&A or investments",
+      "Market attractiveness and growth validation",
+      "Revenue and demand assessment",
+      "Risk and sensitivity analysis",
+    ],
+  },
+  {
+    id: "go-to-market-strategy",
+    title: "Go-to-Market & Commercial Strategy",
+    description:
+      "We design commercialization strategies that connect customer insight with clear positioning and pricing. The result is a go-to-market plan that strengthens channel performance and accelerates revenue growth.",
+    supports: [
+      "Go-to-market strategy design",
+      "Pricing and value proposition development",
+      "Channel and partner strategy",
+      "Sales model optimization",
+    ],
+  },
+  {
+    id: "execution-enablement",
+    title: "Execution Enablement & Strategic PMO",
+    description:
+      "We stay engaged beyond strategy to ensure initiatives are sequenced, resourced, and tracked to outcomes. Our PMO support builds cadence, accountability, and cross-market alignment for execution success.",
+    supports: [
+      "Strategy implementation support",
+      "Initiative prioritization and sequencing",
+      "KPI and performance tracking",
+      "Cross-market execution coordination",
+    ],
+  },
+];
 
 export default function ServicesPage() {
   return (
@@ -10,16 +84,28 @@ export default function ServicesPage() {
       <Section className="space-y-4">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
         <p className="text-lg text-slate-600">
-          We deliver strategic clarity, leadership alignment, and execution plans that unlock revenue momentum.
+          Sagasia delivers strategy, market intelligence, and execution support across Asia-Pacific growth priorities.
+          Clients engage us to translate complex market realities into clear decisions, confident investments, and
+          measurable commercial outcomes.
         </p>
       </Section>
 
       <Section>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="space-y-6">
           {services.map((service) => (
-            <Card key={service.title}>
-              <h2 className="text-xl font-semibold text-slate-900">{service.title}</h2>
-              <p className="mt-2 text-sm text-slate-600">{service.description}</p>
+            <Card key={service.title} id={service.id} className="space-y-4">
+              <div className="space-y-2">
+                <h2 className="text-2xl font-semibold text-slate-900">{service.title}</h2>
+                <p className="text-sm text-slate-600">{service.description}</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">What We Support</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                  {service.supports.map((support) => (
+                    <li key={support}>{support}</li>
+                  ))}
+                </ul>
+              </div>
             </Card>
           ))}
         </div>
