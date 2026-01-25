@@ -6,7 +6,7 @@ This repository is a ready-to-push scaffold for:
 - Tailwind CSS
 - MDX-powered **Insights** section (content stored in `content/insights/*.mdx`)
 
-## Quick start
+## Local development
 
 ```bash
 npm install
@@ -16,6 +16,47 @@ npm run dev
 Open:
 - Home: http://localhost:3000
 - Insights: http://localhost:3000/insights
+- Contact: http://localhost:3000/contact
+
+## Build + start
+
+```bash
+npm run build
+npm run start
+```
+
+By default, the app will serve at http://localhost:3000.
+
+## Deployment (Vercel recommended)
+
+1. Push the repository to GitHub/GitLab/Bitbucket.
+2. In Vercel, click **New Project**, import the repo, and accept the defaults.
+3. Ensure the **Framework Preset** is set to **Next.js**.
+4. Deploy. Vercel will run `npm run build` automatically.
+
+**Optional:** Configure a custom domain in Vercel and set any environment variables (none required for the current build).
+
+## Playwright smoke tests
+
+Install the Playwright browser binaries once:
+
+```bash
+npx playwright install --with-deps
+```
+
+Run the smoke tests:
+
+```bash
+npm run test:e2e
+```
+
+## QA checklist
+
+- **Responsive**: Verify layout at mobile (375px), tablet (768px), and desktop (1280px) widths.
+- **Link checks**: Confirm primary nav, footer links, and CTA buttons route to expected pages.
+- **Form validation**: Submit the contact form with missing/invalid fields; confirm inline errors appear.
+- **Lighthouse basics**: Run Lighthouse on Home and Contact to confirm no critical performance, SEO, or best-practice regressions.
+- **Accessibility**: Validate headings hierarchy, focus states, and form labels using browser dev tools or an axe audit.
 
 ## Add a new MDX post
 
