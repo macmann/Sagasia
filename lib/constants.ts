@@ -1,62 +1,62 @@
 export const services = [
   {
-    title: "Brand Strategy",
+    title: "Strategic Advisory",
     description:
-      "Clarify positioning, messaging, and go-to-market narratives that build trust across channels."
+      "Executive alignment, market positioning, and board-ready narratives for pivotal growth moments."
   },
   {
-    title: "Digital Experience Design",
+    title: "Go-to-Market Acceleration",
     description:
-      "Design conversion-ready marketing sites, product launches, and lifecycle journeys."
+      "Launch planning, pipeline programs, and revenue enablement across sales and marketing teams."
   },
   {
-    title: "Growth & CRM",
+    title: "Brand & Communications",
     description:
-      "Lifecycle programs, retention playbooks, and CRM automation that scale with your team."
+      "Messaging systems, thought leadership, and media-ready storytelling that build credibility."
   },
   {
-    title: "Content & Insights",
+    title: "Customer & Growth Ops",
     description:
-      "Data-backed content systems, thought leadership, and channel strategy built for clarity."
+      "Lifecycle strategy, retention programs, and operational playbooks that scale with demand."
   }
 ];
 
 export const industries = [
   {
-    title: "SaaS & Cloud",
-    description: "Pipeline-focused programs for enterprise and mid-market teams."
+    title: "Enterprise & SaaS",
+    description: "Complex buying journeys, multi-stakeholder sales, and global expansion."
   },
   {
-    title: "Healthcare",
-    description: "Patient-centric messaging with compliance and trust at the core."
+    title: "Professional Services",
+    description: "Repositioning, practice growth, and pipeline strategy for partner-led firms."
   },
   {
-    title: "Fintech",
-    description: "Modern marketing systems built for regulated, high-consideration buyers."
+    title: "Financial Services",
+    description: "Trust-forward marketing and communications for regulated industries."
   },
   {
-    title: "Consumer Brands",
-    description: "Storytelling and loyalty strategies that deepen customer relationships."
+    title: "Emerging Markets",
+    description: "Go-to-market playbooks for new categories and high-growth ventures."
   }
 ];
 
 export const differentiators = [
   {
-    title: "Senior-led delivery",
-    description: "Every engagement is led by experienced strategists and operators."
+    title: "Partner-led delivery",
+    description: "Direct access to senior strategists from discovery through delivery."
   },
   {
-    title: "AI-ready foundations",
-    description: "We build content and data architecture that make AI adoption seamless."
+    title: "Market-informed perspective",
+    description: "We translate market signals into decisive strategic action."
   },
   {
-    title: "Integrated playbooks",
-    description: "From strategy to activation, our work connects every stage of growth."
+    title: "Execution-ready plans",
+    description: "Every engagement ends with clear ownership, timelines, and next steps."
   }
 ];
 
 export const stats = [
-  { label: "Average growth lift", value: "38%" },
-  { label: "Time to launch", value: "6 weeks" },
-  { label: "Client NPS", value: "9.5" }
+  { label: "Avg. pipeline lift", value: "2.3x" },
+  { label: "Strategic engagements", value: "120+" },
+  { label: "Global markets served", value: "18" }
 ];

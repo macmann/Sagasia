@@ -4,16 +4,16 @@ import { Section } from "@/components/Section";
 
 const values = [
   {
-    title: "Clarity first",
-    description: "We translate complexity into simple, durable messaging."
+    title: "Executive-level partnership",
+    description: "Work directly with senior advisors who have led growth at global organizations."
   },
   {
-    title: "Systems over campaigns",
-    description: "We build repeatable engines, not one-off plays."
+    title: "Market-driven clarity",
+    description: "We translate research, stakeholder input, and competitive signals into decisive action."
   },
   {
-    title: "Partnership mindset",
-    description: "We embed with your team and move at your pace."
+    title: "Outcomes first",
+    description: "Every engagement is tied to measurable momentum across narrative, pipeline, and retention."
   }
 ];
 
@@ -22,10 +22,10 @@ export default function AboutPage() {
     <div className="space-y-16">
       <Section className="space-y-6">
         <Badge>About Sagasia</Badge>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">A senior-led marketing studio</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Strategic growth partner for modern leaders</h1>
         <p className="text-lg text-slate-600">
-          Sagasia helps ambitious teams align their brand, product, and growth programs. We blend strategic
-          thinking with execution to build marketing systems that are resilient and ready for modern channels.
+          Sagasia works with founders, executives, and investor-backed teams to clarify positioning, align stakeholders,
+          and accelerate commercial momentum. We blend advisory rigor with activation-ready plans.
         </p>
       </Section>
 

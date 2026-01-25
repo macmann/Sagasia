@@ -7,9 +7,9 @@ export default function ContactPage() {
   return (
     <div className="space-y-16">
       <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Let’s plan your next launch</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Schedule a strategic conversation</h1>
         <p className="text-lg text-slate-600">
-          Tell us about your goals and we will follow up with a tailored plan within two business days.
+          Share your objectives and we will follow up with a tailored proposal within two business days.
         </p>
       </Section>
 
@@ -57,13 +57,13 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700" htmlFor="message">
-                  Project details
+                  How can we help?
                 </label>
                 <textarea
                   className="min-h-[140px] w-full rounded-xl border border-slate-200 px-4 py-2 text-sm"
                   id="message"
                   name="message"
-                  placeholder="Tell us about your goals, timeline, and team."
+                  placeholder="Tell us about your goals, stakeholders, and timeline."
                 />
               </div>
               <Button type="submit">Send inquiry</Button>
@@ -77,9 +77,9 @@ export default function ContactPage() {
             <div>
               <h3 className="text-sm font-semibold text-slate-900">What to expect</h3>
               <ul className="mt-2 space-y-2 text-sm text-slate-600">
-                <li>• Discovery call within 48 hours.</li>
-                <li>• Tailored scope and timeline.</li>
-                <li>• Dedicated senior lead for your engagement.</li>
+                <li>• Intro call with a senior advisor.</li>
+                <li>• Clear scope, stakeholders, and milestones.</li>
+                <li>• Strategic roadmap tailored to your objectives.</li>
               </ul>
             </div>
           </Card>

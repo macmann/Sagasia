@@ -13,19 +13,19 @@ export default function MarketingHomePage() {
       <Section className="pt-4">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-6">
-            <Badge>Strategic marketing partner</Badge>
+            <Badge>Strategic advisory</Badge>
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 {siteConfig.tagline}
               </h1>
               <p className="text-lg text-slate-600">
-                Sagasia helps growth-focused teams align brand, product, and revenue programs with a connected
-                marketing system.
+                Sagasia partners with founders, executives, and investor-backed teams to sharpen market narrative,
+                accelerate commercial growth, and align leadership around the next chapter.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className={buttonClasses("primary")}>Book a discovery call</Link>
-              <Link href="/services" className={buttonClasses("secondary")}>Explore services</Link>
+              <Link href="/contact" className={buttonClasses("primary")}>Schedule an executive briefing</Link>
+              <Link href="/services" className={buttonClasses("secondary")}>View advisory services</Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {stats.map((stat) => (
@@ -39,28 +39,28 @@ export default function MarketingHomePage() {
           <Card className="space-y-6 bg-slate-50">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Engagement snapshot
+                Focus engagement
               </p>
-              <h2 className="text-2xl font-semibold">Launch a market-ready story in 6 weeks.</h2>
+              <h2 className="text-2xl font-semibold">90-day strategic sprint</h2>
               <p className="text-sm text-slate-600">
-                We structure strategy, messaging, and rollout planning into one integrated sprint.
+                Align leadership, update your market story, and build the execution plan needed to grow.
               </p>
             </div>
             <div className="space-y-3 text-sm text-slate-600">
               <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                <span>Brand narrative & positioning</span>
-                <span className="font-semibold text-slate-900">Week 1</span>
+                <span>Executive alignment + diagnostic</span>
+                <span className="font-semibold text-slate-900">Weeks 1-2</span>
               </div>
               <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-                <span>Experience design & content system</span>
-                <span className="font-semibold text-slate-900">Weeks 2-4</span>
+                <span>Market narrative + positioning</span>
+                <span className="font-semibold text-slate-900">Weeks 3-6</span>
               </div>
               <div className="flex items-center justify-between">
-                <span>Launch & optimization</span>
-                <span className="font-semibold text-slate-900">Weeks 5-6</span>
+                <span>Growth roadmap + activation</span>
+                <span className="font-semibold text-slate-900">Weeks 7-12</span>
               </div>
             </div>
-            <Button variant="primary">Download the sprint plan</Button>
+            <Button variant="primary">Request the sprint brief</Button>
           </Card>
         </div>
       </Section>
@@ -80,9 +80,9 @@ export default function MarketingHomePage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Services</p>
-            <h2 className="text-3xl font-semibold">A complete marketing foundation</h2>
+            <h2 className="text-3xl font-semibold">Advisory and growth execution</h2>
             <p className="text-base text-slate-600">
-              Strategy, creative, and lifecycle programs designed to scale with your team.
+              Strategic support for leadership teams navigating growth, repositioning, or expansion.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -100,7 +100,7 @@ export default function MarketingHomePage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Industries</p>
-            <h2 className="text-3xl font-semibold">Expertise across regulated and high-growth teams</h2>
+            <h2 className="text-3xl font-semibold">Experience across complex growth stories</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {industries.map((industry) => (
@@ -115,8 +115,8 @@ export default function MarketingHomePage() {
 
       <Section>
         <CTA
-          title="Ready to align your marketing system?"
-          description="We partner with ambitious teams to build marketing foundations that are modern, measurable, and ready for AI-powered growth."
+          title="Align leadership and accelerate growth."
+          description="Sagasia delivers strategy, narrative, and execution plans that keep your team aligned and your market confident."
         />
       </Section>
     </div>

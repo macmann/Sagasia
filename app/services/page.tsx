@@ -8,9 +8,9 @@ export default function ServicesPage() {
   return (
     <div className="space-y-16">
       <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Services built for scale</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
         <p className="text-lg text-slate-600">
-          From strategy through activation, we design marketing systems that accelerate revenue and retention.
+          We deliver strategic clarity, leadership alignment, and execution plans that unlock revenue momentum.
         </p>
       </Section>
 
@@ -29,7 +29,7 @@ export default function ServicesPage() {
         <Card className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <h3 className="text-xl font-semibold text-slate-900">Need a custom engagement?</h3>
-            <p className="text-sm text-slate-600">Let’s tailor the scope to your roadmap.</p>
+            <p className="text-sm text-slate-600">We tailor scope, cadence, and stakeholders to your growth goals.</p>
           </div>
           <Link href="/contact" className={buttonClasses("primary")}>
             Talk to Sagasia

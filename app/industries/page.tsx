@@ -6,9 +6,9 @@ export default function IndustriesPage() {
   return (
     <div className="space-y-16">
       <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Industries we serve</h1>
+        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Industries we advise</h1>
         <p className="text-lg text-slate-600">
-          We partner with regulated and high-growth teams that need marketing systems built for trust and clarity.
+          We support leadership teams navigating complex growth stories, regulated markets, and global expansion.
         </p>
       </Section>
 

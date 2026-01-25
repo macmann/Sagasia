@@ -15,7 +15,7 @@ export default async function InsightsPage() {
       <Section className="space-y-4">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Insights</h1>
         <p className="text-lg text-slate-600">
-          Articles and playbooks from the Sagasia team, grounded in strategy and execution.
+          Market perspectives and advisory playbooks from the Sagasia team.
         </p>
       </Section>
 
