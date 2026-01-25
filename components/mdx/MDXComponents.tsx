@@ -1,7 +1,7 @@
-import type { MDXComponents } from "mdx/types";
+import type { MDXComponents as MDXComponentsType } from "mdx/types";
 import Link from "next/link";
 
-export const MDXComponents: MDXComponents = {
+export const MDXComponents: MDXComponentsType = {
   a: (props) => {
     const href = (props as any).href as string | undefined;
     const isExternal = href?.startsWith("http");
