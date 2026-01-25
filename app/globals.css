@@ -2,5 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Basic typography defaults for MDX content */
-.prose a { text-decoration: underline; }
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-slate-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-slate-900;
+  }
+
+  p {
+    @apply text-slate-600;
+  }
+
+  a {
+    @apply text-slate-900 underline-offset-4 hover:underline;
+  }
+}
+
+.prose a {
+  text-decoration: underline;
+}
