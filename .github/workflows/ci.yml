@@ -13,7 +13,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: "npm"
-      - run: npm ci
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: npm-cache-v2-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            npm-cache-v2-${{ runner.os }}-
+      - name: Pin npm
+        run: npm install -g npm@9.8.1
+      - name: Clear npm cache
+        run: npm cache clean --force
+      - run: npm install
       - run: npm run lint
       - run: npm run build
