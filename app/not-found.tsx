@@ -3,12 +3,31 @@ import { buttonClasses } from "@/components/Button";
 
 export default function NotFoundPage() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-6">
       <h1 className="text-3xl font-semibold tracking-tight">Page not found</h1>
       <p className="text-slate-600">The page you are looking for does not exist.</p>
-      <Link href="/" className={buttonClasses("primary")}>
-        Back to home
-      </Link>
+      <div className="flex flex-wrap gap-3">
+        <Link href="/" className={buttonClasses("primary")}>
+          Back to home
+        </Link>
+        <Link href="/contact" className={buttonClasses("secondary")}>
+          Contact us
+        </Link>
+      </div>
+      <div className="space-y-2 text-sm text-slate-600">
+        <p>Popular links:</p>
+        <ul className="space-y-1">
+          <li>
+            <Link href="/services">Services</Link>
+          </li>
+          <li>
+            <Link href="/industries">Industries</Link>
+          </li>
+          <li>
+            <Link href="/insights">Insights</Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

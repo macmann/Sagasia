@@ -1,6 +1,12 @@
 import { Badge } from "@/components/Badge";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "Learn how Sagasia supports leadership teams with Asia-Pacific strategy and market intelligence."
+};
 
 const coreServices = [
   "Strategy & Growth Advisory",

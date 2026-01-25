@@ -4,9 +4,11 @@ import { Card } from "@/components/Card";
 import { InsightDisclaimer } from "@/components/InsightDisclaimer";
 import { Section } from "@/components/Section";
 import { getInsights } from "@/lib/mdx/getInsights";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Insights"
+export const metadata: Metadata = {
+  title: "Insights",
+  description: "Browse Sagasia insights on market entry, competitive intelligence, and growth strategy."
 };
 
 export default async function InsightsPage() {

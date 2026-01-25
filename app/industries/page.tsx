@@ -1,5 +1,11 @@
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industries",
+  description: "See the industries Sagasia advises across Asia-Pacific markets."
+};
 
 export default function IndustriesPage() {
   const targetIndustries = [

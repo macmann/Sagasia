@@ -2,6 +2,13 @@ import Link from "next/link";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { buttonClasses } from "@/components/Button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Explore Sagasia advisory services spanning strategy, market entry, competitive intelligence, and execution support."
+};
 
 const services = [
   {
