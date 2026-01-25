@@ -33,11 +33,12 @@ export type ButtonProps = {
 const isButtonLinkProps = (props: ButtonLinkProps | ButtonButtonProps): props is ButtonLinkProps =>
   typeof (props as ButtonLinkProps).href === "string";
 
-export function Button({ variant = "primary", className, ...props }: ButtonProps) {
+export function Button(props: ButtonProps) {
   if (isButtonLinkProps(props)) {
-    const { href, ...rest } = props;
+    const { variant = "primary", className, href, ...rest } = props;
     return <Link className={buttonClasses(variant, className)} href={href} {...rest} />;
   }
 
-  return <button className={buttonClasses(variant, className)} {...props} />;
+  const { variant = "primary", className, href: _href, ...rest } = props;
+  return <button className={buttonClasses(variant, className)} {...rest} />;
 }
