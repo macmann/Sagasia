@@ -3,6 +3,13 @@ import { Badge } from "@/components/Badge";
 import { buttonClasses } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "Sagasia delivers Asia-Pacific strategy, market intelligence, and growth execution support for leadership teams."
+};
 
 export default function MarketingHomePage() {
   const serviceSnapshots = [
@@ -164,8 +171,8 @@ export default function MarketingHomePage() {
             </div>
           </div>
           <div>
-            <Link href="/contact" className={buttonClasses("secondary")}>
-              Download slides
+            <Link href="/contact?reason=download" className={buttonClasses("secondary")}>
+              Download proof points
             </Link>
           </div>
         </div>

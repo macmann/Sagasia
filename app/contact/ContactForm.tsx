@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useFormState, useFormStatus } from "react-dom";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
@@ -59,6 +60,9 @@ function SubmitButton() {
 
 export function ContactForm() {
   const [state, formAction] = useFormState(submitContact, initialState);
+  const searchParams = useSearchParams();
+  const reason = searchParams.get("reason");
+  const defaultInquiryType = reason === "download" ? "download" : "";
 
   return (
     <Card>
@@ -70,9 +74,16 @@ export function ContactForm() {
                 ? "border-emerald-200 bg-emerald-50 text-emerald-800"
                 : "border-rose-200 bg-rose-50 text-rose-700"
             }`}
+            role="status"
+            aria-live="polite"
           >
             {state.message}
           </div>
+        ) : null}
+        {reason === "download" ? (
+          <p className="text-sm text-slate-600">
+            Share your details to access the proof points and download materials.
+          </p>
         ) : null}
         <Field
           id="name"
@@ -112,11 +123,12 @@ export function ContactForm() {
               id="inquiryType"
               name="inquiryType"
               required
-              defaultValue=""
+              defaultValue={defaultInquiryType}
             >
               <option disabled value="">
                 Select an option
               </option>
+              <option value="download">Proof points / downloads</option>
               <option value="advisory">Strategic advisory</option>
               <option value="market-entry">Market entry</option>
               <option value="partnerships">Partnerships</option>

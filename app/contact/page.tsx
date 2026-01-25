@@ -1,6 +1,12 @@
 import { Card } from "@/components/Card";
 import { Section } from "@/components/Section";
 import { ContactForm } from "./ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Start a strategic conversation with Sagasia's advisory team."
+};
 
 export default function ContactPage() {
   return (

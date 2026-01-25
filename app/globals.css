@@ -22,6 +22,17 @@
   a {
     @apply text-slate-900 underline-offset-4 hover:underline;
   }
+
+  a:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-slate-900 no-underline;
+  }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  button:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-slate-400;
+  }
 }
 
 .prose a {
