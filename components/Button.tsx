@@ -1,4 +1,5 @@
-import type { ButtonHTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
+import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 
 const baseStyles =
@@ -17,10 +18,23 @@ export function buttonClasses(variant: ButtonVariant = "primary", className?: st
   return cn(baseStyles, variantStyles[variant], className);
 }
 
-export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: ButtonVariant;
+type ButtonLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & {
+  href: string;
 };
 
+type ButtonButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  href?: undefined;
+};
+
+export type ButtonProps = {
+  variant?: ButtonVariant;
+} & (ButtonLinkProps | ButtonButtonProps);
+
 export function Button({ variant = "primary", className, ...props }: ButtonProps) {
+  if ("href" in props && props.href) {
+    const { href, ...rest } = props;
+    return <Link className={buttonClasses(variant, className)} href={href} {...rest} />;
+  }
+
   return <button className={buttonClasses(variant, className)} {...props} />;
 }

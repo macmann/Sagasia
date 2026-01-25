@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { buttonClasses } from "@/components/Button";
+import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 
 interface CTAProps {
@@ -27,12 +26,12 @@ export function CTA({
           <p className="text-sm text-slate-200 sm:text-base">{description}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Link className={buttonClasses("secondary", "bg-white text-slate-900")} href={primaryHref}>
+          <Button className="bg-white text-slate-900 hover:bg-slate-100" href={primaryHref} variant="secondary">
             {primaryLabel}
-          </Link>
-          <Link className={buttonClasses("ghost", "text-white hover:bg-white/10")} href={secondaryHref}>
+          </Button>
+          <Button className="text-white hover:bg-white/10" href={secondaryHref} variant="ghost">
             {secondaryLabel}
-          </Link>
+          </Button>
         </div>
       </div>
     </Card>
