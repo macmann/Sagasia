@@ -1,7 +1,12 @@
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import { cn } from "@/lib/utils/cn";
 
-export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
+  icon?: ReactNode;
+  iconClassName?: string;
+}
+
+export function Card({ className, icon, iconClassName, children, ...props }: CardProps) {
   return (
     <div
       className={cn(
@@ -9,6 +14,18 @@ export function Card({ className, ...props }: HTMLAttributes<HTMLDivElement>) {
         className
       )}
       {...props}
-    />
+    >
+      {icon ? (
+        <div
+          className={cn(
+            "mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-600",
+            iconClassName
+          )}
+        >
+          {icon}
+        </div>
+      ) : null}
+      {children}
+    </div>
   );
 }
