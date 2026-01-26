@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "preinstall": "rm -rf .npm-cache && npm cache clean --force",
+    "preinstall": "npm cache clean --force",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -37,5 +37,9 @@
     "tailwindcss": "3.4.17",
     "postcss": "8.5.1",
     "autoprefixer": "10.4.20"
+  },
+  "engines": {
+    "node": "20.x",
+    "npm": "10.x"
   }
 }
