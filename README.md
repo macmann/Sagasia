@@ -36,6 +36,10 @@ By default, the app will serve at http://localhost:3000.
 
 **Optional:** Configure a custom domain in Vercel and set any environment variables (none required for the current build).
 
+### Vercel install hardening
+
+This repo includes a `vercel.json` install command that uses `npm ci` and an ephemeral `/tmp/npm-cache` to avoid reusing a corrupted cache across builds. The lockfile (`package-lock.json`) must be present for `npm ci` to work, and it is committed in this repo. The root `.npmrc` also pins the registry and increases fetch retry timeouts for more resilient installs.
+
 ## Playwright smoke tests
 
 Install the Playwright browser binaries once:

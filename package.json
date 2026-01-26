@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "preinstall": "npm cache clean --force",
+    "preinstall": "node -v && npm -v && node -e \"if (process.env.CI || process.env.VERCEL) { require('child_process').execSync('npm cache clean --force', { stdio: 'inherit' }); }\"",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
