@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "packageManager": "pnpm@10.18.3",
   "scripts": {
-    "preinstall": "node -v && npm -v && node -e \"if (process.env.CI || process.env.VERCEL) { require('child_process').execSync('npm cache clean --force', { stdio: 'inherit' }); }\"",
+    "preinstall": "node -v && pnpm -v",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

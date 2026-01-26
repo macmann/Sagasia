@@ -1,3 +1,4 @@
 {
-  "installCommand": "npm cache clean --force && npm ci --cache /tmp/npm-cache --prefer-online --no-audit --no-fund"
+  "installCommand": "corepack enable && pnpm install --frozen-lockfile",
+  "buildCommand": "pnpm run build"
 }
