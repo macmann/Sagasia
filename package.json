@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:ci": "npx playwright install --with-deps && playwright test"
   },
   "dependencies": {
     "next": "15.1.8",
