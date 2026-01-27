@@ -40,6 +40,23 @@ By default, the app will serve at http://localhost:3000.
 
 This repo includes a `vercel.json` install command that uses `npm ci` and an ephemeral `/tmp/npm-cache` to avoid reusing a corrupted cache across builds. The lockfile (`package-lock.json`) must be present for `npm ci` to work, and it is committed in this repo. The root `.npmrc` also pins the registry and increases fetch retry timeouts for more resilient installs.
 
+## Deployment (Render static site)
+
+Render can host the app as a static site using the Next.js export output.
+
+1. Create a new **Static Site** in Render and connect the repo.
+2. Set the **Build Command** to:
+   ```bash
+   pnpm install --frozen-lockfile && pnpm build
+   ```
+3. Set the **Publish Directory** to:
+   ```
+   out
+   ```
+4. Set the **Environment** to **Node 20** (matches `package.json` engines).
+
+After deploy, Render will serve the pre-rendered static output from `out/`.
+
 ## Playwright smoke tests
 
 Install the Playwright browser binaries once:
