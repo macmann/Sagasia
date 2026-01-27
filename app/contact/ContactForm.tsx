@@ -1,17 +1,22 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useFormState, useFormStatus } from "react-dom";
+import { useState } from "react";
+import type { FormEvent } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
-import type { ContactActionState } from "./actions";
-import { submitContact } from "./actions";
+import type { ContactActionState, ContactPayload } from "./actions";
+import { getContactPayload, validateContactPayload } from "./actions";
 
 const initialState: ContactActionState = {
   status: "idle",
   message: "",
   fieldErrors: {},
 };
+
+const successMessage = "Thanks for reaching out. Our team will respond within two business days.";
+const genericErrorMessage = "We couldn't submit your request right now. Please try again shortly.";
+const missingEndpointMessage = "This form isn't configured yet. Please email info@sagasia.com.";
 
 type FieldProps = {
   id: string;
@@ -48,25 +53,88 @@ function Field({ id, label, name, type = "text", placeholder, error }: FieldProp
   );
 }
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+type SubmitButtonProps = {
+  isSubmitting: boolean;
+};
 
+function SubmitButton({ isSubmitting }: SubmitButtonProps) {
   return (
-    <Button type="submit" disabled={pending} className={pending ? "opacity-70" : undefined}>
-      {pending ? "Sending..." : "Send inquiry"}
+    <Button type="submit" disabled={isSubmitting} className={isSubmitting ? "opacity-70" : undefined}>
+      {isSubmitting ? "Sending..." : "Send inquiry"}
     </Button>
   );
 }
 
+async function sendContactRequest(payload: ContactPayload, endpoint: string) {
+  const response = await fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw new Error(`Request failed with status ${response.status}`);
+  }
+}
+
 export function ContactForm() {
-  const [state, formAction] = useFormState(submitContact, initialState);
+  const [state, setState] = useState<ContactActionState>(initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const searchParams = useSearchParams();
   const reason = searchParams.get("reason");
   const defaultInquiryType = reason === "download" ? "download" : "";
+  const contactEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "";
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const payload = getContactPayload(new FormData(form));
+    const validationState = validateContactPayload(payload);
+
+    if (validationState.status === "error") {
+      setState(validationState);
+      return;
+    }
+
+    if (!contactEndpoint) {
+      setState({
+        status: "error",
+        message: missingEndpointMessage,
+        fieldErrors: {},
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setState({ status: "idle", message: "", fieldErrors: {} });
+
+    try {
+      await sendContactRequest(payload, contactEndpoint);
+      setState({
+        status: "success",
+        message: successMessage,
+        fieldErrors: {},
+      });
+      form.reset();
+    } catch (error) {
+      console.error("Contact form submission failed", error);
+      setState({
+        status: "error",
+        message: genericErrorMessage,
+        fieldErrors: {},
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <Card>
-      <form action={formAction} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-4">
         {state.message ? (
           <div
             className={`rounded-xl border px-4 py-3 text-sm ${
@@ -111,7 +179,13 @@ export function ContactForm() {
           error={state.fieldErrors.email}
         />
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field id="industry" label="Industry" name="industry" placeholder="Fintech" error={state.fieldErrors.industry} />
+          <Field
+            id="industry"
+            label="Industry"
+            name="industry"
+            placeholder="Fintech"
+            error={state.fieldErrors.industry}
+          />
           <div className="space-y-2">
             <label className="text-sm font-semibold text-slate-700" htmlFor="inquiryType">
               Type of inquiry
@@ -161,7 +235,7 @@ export function ContactForm() {
             </p>
           ) : null}
         </div>
-        <SubmitButton />
+        <SubmitButton isSubmitting={isSubmitting} />
       </form>
     </Card>
   );

@@ -1,14 +1,22 @@
-"use server";
-
 type ContactActionState = {
   status: "idle" | "error" | "success";
   message: string;
   fieldErrors: Record<string, string>;
 };
 
+type ContactPayload = {
+  name: string;
+  company: string;
+  role: string;
+  email: string;
+  industry: string;
+  inquiryType: string;
+  description: string;
+};
+
 const emailPattern = /\S+@\S+\.\S+/;
 
-const requiredFields = [
+const requiredFields: Array<keyof ContactPayload> = [
   "name",
   "company",
   "role",
@@ -18,24 +26,29 @@ const requiredFields = [
   "description",
 ];
 
-export async function submitContact(
-  _prevState: ContactActionState,
-  formData: FormData
-): Promise<ContactActionState> {
-  const payload = {
-    name: (formData.get("name") ?? "").toString().trim(),
-    company: (formData.get("company") ?? "").toString().trim(),
-    role: (formData.get("role") ?? "").toString().trim(),
-    email: (formData.get("email") ?? "").toString().trim(),
-    industry: (formData.get("industry") ?? "").toString().trim(),
-    inquiryType: (formData.get("inquiryType") ?? "").toString().trim(),
-    description: (formData.get("description") ?? "").toString().trim(),
-  };
+const defaultValidationMessage = "Please fix the highlighted fields and try again.";
 
+function getPayloadValue(formData: FormData, key: keyof ContactPayload) {
+  return (formData.get(key) ?? "").toString().trim();
+}
+
+export function getContactPayload(formData: FormData): ContactPayload {
+  return {
+    name: getPayloadValue(formData, "name"),
+    company: getPayloadValue(formData, "company"),
+    role: getPayloadValue(formData, "role"),
+    email: getPayloadValue(formData, "email"),
+    industry: getPayloadValue(formData, "industry"),
+    inquiryType: getPayloadValue(formData, "inquiryType"),
+    description: getPayloadValue(formData, "description"),
+  };
+}
+
+export function validateContactPayload(payload: ContactPayload): ContactActionState {
   const fieldErrors: Record<string, string> = {};
 
   for (const field of requiredFields) {
-    if (!payload[field as keyof typeof payload]) {
+    if (!payload[field]) {
       fieldErrors[field] = "This field is required.";
     }
   }
@@ -47,19 +60,16 @@ export async function submitContact(
   if (Object.keys(fieldErrors).length > 0) {
     return {
       status: "error",
-      message: "Please fix the highlighted fields and try again.",
+      message: defaultValidationMessage,
       fieldErrors,
     };
   }
 
-  // TODO: Integrate with SMTP/Resend (or another email provider) to send the inquiry.
-  console.log("Contact inquiry received:", payload);
-
   return {
-    status: "success",
-    message: "Thanks for reaching out. Our team will respond within two business days.",
+    status: "idle",
+    message: "",
     fieldErrors: {},
   };
 }
 
-export type { ContactActionState };
+export type { ContactActionState, ContactPayload };
