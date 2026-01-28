@@ -1,4 +1,5 @@
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
 import { Section } from "@/components/Section";
 import { ContactForm } from "./ContactForm";
 import type { Metadata } from "next";
@@ -11,12 +12,21 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="space-y-16">
-      <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Schedule a strategic conversation</h1>
-        <p className="text-lg text-slate-600">
-          Begin a confidential, focused discussion about your objectives. We will follow up with a tailored proposal
-          within two business days.
-        </p>
+      <Section className="section-gradient px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Contact</p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Schedule a strategic conversation</h1>
+            <p className="text-lg text-slate-600">
+              Begin a confidential, focused discussion about your objectives. We will follow up with a tailored
+              proposal within two business days.
+            </p>
+          </div>
+          <HeroVisual
+            src="/images/contact-hero.svg"
+            alt="Illustration of a consulting team ready to connect"
+          />
+        </div>
       </Section>
 
       <Section>

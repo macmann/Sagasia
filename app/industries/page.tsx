@@ -1,4 +1,6 @@
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
+import { Icon } from "@/components/Icon";
 import { Section } from "@/components/Section";
 import type { Metadata } from "next";
 
@@ -9,16 +11,16 @@ export const metadata: Metadata = {
 
 export default function IndustriesPage() {
   const targetIndustries = [
-    "Energy & Renewables",
-    "Healthcare & Life Sciences",
-    "Automotive & Mobility",
-    "Consumer & Retail",
-    "Industrials & Manufacturing",
-    "Technology/Media/Telecommunications (TMT)",
-    "Logistics & Transportation",
-    "Financial Services & Investment",
-    "Infrastructure & Utilities",
-    "Natural Resources & Materials"
+    { label: "Energy & Renewables", icon: "energy-renewables" },
+    { label: "Healthcare & Life Sciences", icon: "healthcare-life-sciences" },
+    { label: "Automotive & Mobility", icon: "automotive-mobility" },
+    { label: "Consumer & Retail", icon: "consumer-retail" },
+    { label: "Industrials & Manufacturing", icon: "industrials-manufacturing" },
+    { label: "Technology/Media/Telecommunications (TMT)", icon: "tmt" },
+    { label: "Logistics & Transportation", icon: "logistics-transportation" },
+    { label: "Financial Services & Investment", icon: "financial-services" },
+    { label: "Infrastructure & Utilities", icon: "infrastructure-utilities" },
+    { label: "Natural Resources & Materials", icon: "natural-resources-materials" },
   ];
 
   const keyChallenges = [
@@ -36,14 +38,23 @@ export default function IndustriesPage() {
 
   return (
     <div className="space-y-16">
-      <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Industries we advise</h1>
-        <p className="text-lg text-slate-600">
-          We support leadership teams navigating complex growth stories, regulated markets, and global expansion.
-        </p>
+      <Section className="section-gradient px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Industries</p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Industries we advise</h1>
+            <p className="text-lg text-slate-600">
+              We support leadership teams navigating complex growth stories, regulated markets, and global expansion.
+            </p>
+          </div>
+          <HeroVisual
+            src="/images/industries-hero.svg"
+            alt="Illustration of industry sectors across Asia-Pacific markets"
+          />
+        </div>
       </Section>
 
-      <Section>
+      <Section className="section-dots px-8">
         <div className="space-y-8">
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Target industries</p>
@@ -51,8 +62,9 @@ export default function IndustriesPage() {
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {targetIndustries.map((industry) => (
-              <Card key={industry} className="py-4">
-                <p className="text-sm font-semibold text-slate-900">{industry}</p>
+              <Card key={industry.label} className="flex items-center gap-4 py-4">
+                <Icon name={industry.icon} category="industries" />
+                <p className="text-sm font-semibold text-slate-900">{industry.label}</p>
               </Card>
             ))}
           </div>

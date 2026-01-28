@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { buttonClasses } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
+import { Icon } from "@/components/Icon";
 import { Section } from "@/components/Section";
 import type { Metadata } from "next";
 
@@ -17,38 +19,53 @@ export default function MarketingHomePage() {
       title: "Strategy & Growth Advisory",
       description: "Board-level guidance that clarifies growth priorities and aligns leadership decisions.",
       href: "/services#strategy-growth-advisory",
+      icon: "strategy-growth",
     },
     {
       title: "Market Entry & Expansion",
       description: "Go deeper on the right markets with local signal, partner mapping, and entry pathways.",
       href: "/services#market-entry-expansion",
+      icon: "market-entry",
     },
     {
       title: "Competitor & Market Intelligence",
       description: "Independent intelligence to understand share shifts, disruptors, and white-space moves.",
       href: "/services#competitor-market-intelligence",
+      icon: "competitor-intelligence",
     },
     {
       title: "Commercial Due Diligence & Opportunity Assessment",
       description: "Evidence-backed sizing, demand validation, and risk assessments for decisive moves.",
       href: "/services#commercial-due-diligence",
+      icon: "commercial-due-diligence",
     },
     {
       title: "Go-to-Market & Commercial Strategy",
       description: "Positioning, pricing, and channel strategy that turns insight into market action.",
       href: "/services#go-to-market-strategy",
+      icon: "go-to-market",
     },
     {
       title: "Execution Enablement & Strategic PMO",
       description: "Operating rhythms, KPI alignment, and executive PMO support to deliver outcomes.",
       href: "/services#execution-enablement",
+      icon: "execution-enablement",
     },
+  ];
+
+  const industryHighlights = [
+    { label: "Technology & SaaS", icon: "tmt" },
+    { label: "Fintech & Payments", icon: "financial-services" },
+    { label: "Consumer & Retail", icon: "consumer-retail" },
+    { label: "Industrial & Manufacturing", icon: "industrials-manufacturing" },
+    { label: "Healthcare & Life Sciences", icon: "healthcare-life-sciences" },
+    { label: "Energy & Infrastructure", icon: "energy-renewables" },
   ];
 
   return (
     <div className="space-y-16">
       <Section className="pt-4">
-        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div className="space-y-6">
             <Badge>Strategic advisory</Badge>
             <div className="space-y-4">
@@ -65,6 +82,13 @@ export default function MarketingHomePage() {
               <Link href="/services" className={buttonClasses("secondary")}>View advisory services</Link>
             </div>
           </div>
+          <HeroVisual
+            src="/images/hero.svg"
+            alt="Abstract illustration representing Asia-Pacific growth strategy"
+            priority
+          />
+        </div>
+        <div className="mt-10">
           <Card className="space-y-6 bg-slate-50">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
@@ -84,7 +108,7 @@ export default function MarketingHomePage() {
         </div>
       </Section>
 
-      <Section>
+      <Section className="section-gradient px-8">
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">About Us</p>
@@ -98,7 +122,7 @@ export default function MarketingHomePage() {
         </div>
       </Section>
 
-      <Section className="rounded-3xl border border-slate-200 bg-slate-50 px-8">
+      <Section className="section-dots px-8">
         <div className="space-y-4">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">What We Offer</p>
@@ -136,7 +160,8 @@ export default function MarketingHomePage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceSnapshots.map((service) => (
               <Card key={service.title} className="flex h-full flex-col justify-between gap-4">
-                <div className="space-y-2">
+                <div className="space-y-3">
+                  <Icon name={service.icon} />
                   <h3 className="text-xl font-semibold text-slate-900">{service.title}</h3>
                   <p className="text-sm text-slate-600">{service.description}</p>
                 </div>
@@ -162,12 +187,12 @@ export default function MarketingHomePage() {
           <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
             <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Industries covered</p>
             <div className="mt-4 grid gap-3 text-sm text-slate-600 sm:grid-cols-2 lg:grid-cols-3">
-              <span>Technology &amp; SaaS</span>
-              <span>Fintech &amp; Payments</span>
-              <span>Consumer &amp; Retail</span>
-              <span>Industrial &amp; Manufacturing</span>
-              <span>Healthcare &amp; Life Sciences</span>
-              <span>Energy &amp; Infrastructure</span>
+              {industryHighlights.map((industry) => (
+                <div key={industry.label} className="flex items-center gap-3">
+                  <Icon name={industry.icon} category="industries" size={20} />
+                  <span>{industry.label}</span>
+                </div>
+              ))}
             </div>
           </div>
           <div>

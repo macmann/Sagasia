@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
+import { Icon } from "@/components/Icon";
 import { Section } from "@/components/Section";
 import { buttonClasses } from "@/components/Button";
 import type { Metadata } from "next";
@@ -14,6 +16,7 @@ const services = [
   {
     id: "strategy-growth-advisory",
     title: "Strategy & Growth Advisory",
+    icon: "strategy-growth",
     description:
       "We partner with leadership teams to sharpen growth priorities, align decision-makers, and define the moves that matter most. Our advisory work combines board-level insight with grounded market realities, so strategies are both ambitious and executable.",
     supports: [
@@ -26,6 +29,7 @@ const services = [
   {
     id: "market-entry-expansion",
     title: "Market Entry & Expansion",
+    icon: "market-entry",
     description:
       "We help clients validate demand, size opportunities, and determine the best entry pathway for Asia-Pacific markets. Each engagement translates local market signals into a clear route-to-market plan and partner strategy.",
     supports: [
@@ -38,6 +42,7 @@ const services = [
   {
     id: "competitor-market-intelligence",
     title: "Competitor & Market Intelligence",
+    icon: "competitor-intelligence",
     description:
       "Our intelligence programs decode competitive moves, pricing dynamics, and customer behavior shifts across the region. Leaders use these insights to defend market share, reposition offerings, and anticipate disruption.",
     supports: [
@@ -50,6 +55,7 @@ const services = [
   {
     id: "commercial-due-diligence",
     title: "Commercial Due Diligence & Opportunity Assessment",
+    icon: "commercial-due-diligence",
     description:
       "We deliver independent diligence that validates market attractiveness, demand reality, and key risks before capital is committed. Investors and corporate development teams rely on our analysis to move forward with confidence.",
     supports: [
@@ -62,6 +68,7 @@ const services = [
   {
     id: "go-to-market-strategy",
     title: "Go-to-Market & Commercial Strategy",
+    icon: "go-to-market",
     description:
       "We design commercialization strategies that connect customer insight with clear positioning and pricing. The result is a go-to-market plan that strengthens channel performance and accelerates revenue growth.",
     supports: [
@@ -74,6 +81,7 @@ const services = [
   {
     id: "execution-enablement",
     title: "Execution Enablement & Strategic PMO",
+    icon: "execution-enablement",
     description:
       "We stay engaged beyond strategy to ensure initiatives are sequenced, resourced, and tracked to outcomes. Our PMO support builds cadence, accountability, and cross-market alignment for execution success.",
     supports: [
@@ -88,20 +96,30 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="space-y-16">
-      <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
-        <p className="text-lg text-slate-600">
-          Sagasia delivers strategy, market intelligence, and execution support across Asia-Pacific growth priorities.
-          Clients engage us to translate complex market realities into clear decisions, confident investments, and
-          measurable commercial outcomes.
-        </p>
+      <Section className="section-gradient px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Advisory services</p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
+            <p className="text-lg text-slate-600">
+              Sagasia delivers strategy, market intelligence, and execution support across Asia-Pacific growth
+              priorities. Clients engage us to translate complex market realities into clear decisions, confident
+              investments, and measurable commercial outcomes.
+            </p>
+          </div>
+          <HeroVisual
+            src="/images/services-hero.svg"
+            alt="Illustration of consulting services and growth enablement"
+          />
+        </div>
       </Section>
 
-      <Section>
+      <Section className="section-dots px-8">
         <div className="space-y-6">
           {services.map((service) => (
             <Card key={service.title} id={service.id} className="space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-3">
+                <Icon name={service.icon} />
                 <h2 className="text-2xl font-semibold text-slate-900">{service.title}</h2>
                 <p className="text-sm text-slate-600">{service.description}</p>
               </div>
