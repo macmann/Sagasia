@@ -38,3 +38,37 @@
 .prose a {
   text-decoration: underline;
 }
+
+.section-gradient {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(226 232 240);
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(241, 245, 249, 0.9));
+}
+
+.section-gradient::after {
+  content: "";
+  position: absolute;
+  inset: -20% 40% auto auto;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(148, 163, 184, 0.2), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-gradient > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-dots {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid rgb(226 232 240);
+  background-color: rgba(248, 250, 252, 0.9);
+  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 0);
+  background-size: 22px 22px;
+}

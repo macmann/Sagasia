@@ -1,5 +1,6 @@
 import { Badge } from "@/components/Badge";
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
 import { Section } from "@/components/Section";
 import type { Metadata } from "next";
 
@@ -29,17 +30,30 @@ const industryCoverage = [
 export default function AboutPage() {
   return (
     <div className="space-y-16">
-      <Section id="company-overview" className="space-y-6">
-        <Badge>About Sagasia</Badge>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Strategic growth partner for modern leaders</h1>
-        <p className="border-l-2 border-slate-200 pl-4 text-lg text-slate-600">
-          Sagasia is an independent Asia-Pacific strategy and market intelligence firm partnering with founders,
-          executives, and investors to diagnose market realities, align leadership priorities, and translate insight into
-          execution-ready growth plans across the region.
-        </p>
+      <Section id="company-overview" className="section-gradient px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div className="space-y-4">
+            <Badge>About Sagasia</Badge>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              Strategic growth partner for modern leaders
+            </h1>
+            <p className="text-lg text-slate-600">
+              Asia-Pacific market intelligence and strategic advisory for teams ready to move decisively.
+            </p>
+            <p className="border-l-2 border-slate-200 pl-4 text-base text-slate-600">
+              Sagasia is an independent Asia-Pacific strategy and market intelligence firm partnering with founders,
+              executives, and investors to diagnose market realities, align leadership priorities, and translate insight
+              into execution-ready growth plans across the region.
+            </p>
+          </div>
+          <HeroVisual
+            src="/images/about-hero.svg"
+            alt="Illustration of regional market insights and strategic collaboration"
+          />
+        </div>
       </Section>
 
-      <Section id="core-services">
+      <Section id="core-services" className="section-dots px-8">
         <div className="grid gap-6 md:grid-cols-2">
           <Card className="space-y-4">
             <div>
