@@ -41,9 +41,12 @@ export default function AboutPage() {
               Asia-Pacific market intelligence and strategic advisory for teams ready to move decisively.
             </p>
             <p className="border-l-2 border-border pl-4 text-base text-text-dark/70">
-              Sagasia is an independent Asia-Pacific strategy and market intelligence firm partnering with founders,
-              executives, and investors to diagnose market realities, align leadership priorities, and translate insight
-              into execution-ready growth plans across the region.
+              Sagasia is a strategy and market intelligence advisory partner supporting businesses entering, expanding,
+              and competing across Asia-Pacific. Founded in 2025, Sagasia draws on experience from 100+ strategy and
+              market-entry engagements across the region, delivering insight-driven recommendations grounded in primary
+              research, local access, and on-the-ground execution realities. We help clients cut through market
+              complexity, validate growth opportunities, and make confident investment and expansion decisions across
+              ASEAN and adjacent markets.
             </p>
           </div>
           <HeroVisual
