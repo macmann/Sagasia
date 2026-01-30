@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { footerNav } from "@/lib/nav";
 import { siteConfig } from "@/lib/siteConfig";
@@ -9,7 +10,16 @@ export function Footer() {
       <Container className="space-y-8 py-10">
         <div className="grid gap-8 md:grid-cols-[2fr_1fr_1fr]">
           <div className="space-y-3">
-            <div className="text-lg font-semibold">{siteConfig.name}</div>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/images/sagasia-logo.svg"
+                alt="Sagasia"
+                width={44}
+                height={44}
+                className="h-11 w-auto"
+              />
+              <div className="text-lg font-semibold">{siteConfig.name}</div>
+            </div>
             <p className="text-sm text-slate-600">{siteConfig.description}</p>
             <div className="space-y-1 text-sm text-slate-600">
               <p>
