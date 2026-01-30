@@ -18,9 +18,9 @@ export function Section({
   ...props
 }: SectionProps) {
   return (
-    <section className={cn("py-12 sm:py-16", className)} {...props}>
+    <section className={cn("py-8 sm:py-12", className)} {...props}>
       {title || subtitle ? (
-        <div className="mb-8 space-y-3">
+        <div className="mb-6 space-y-2">
           {title ? (
             <h2 className={cn("text-3xl font-semibold text-text-dark sm:text-4xl", headingClassName)}>
               {title}
