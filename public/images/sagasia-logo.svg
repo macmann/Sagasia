@@ -1,0 +1,13 @@
+<svg width="260" height="160" viewBox="0 0 260 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#clip0)">
+    <polygon points="80,10 120,10 140,45 120,80 80,80 60,45" fill="#7BC043"/>
+    <polygon points="130,45 170,45 190,80 170,115 130,115 110,80" fill="#1BAE9E"/>
+    <polygon points="80,80 120,80 140,115 120,150 80,150 60,115" fill="#2F80ED"/>
+  </g>
+  <text x="20" y="155" font-family="'Trebuchet MS', sans-serif" font-size="36" font-weight="700" fill="#F59E0B" letter-spacing="4">SAGASIA</text>
+  <defs>
+    <clipPath id="clip0">
+      <rect width="200" height="140" fill="white"/>
+    </clipPath>
+  </defs>
+</svg>

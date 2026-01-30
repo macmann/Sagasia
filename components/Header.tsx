@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -26,8 +27,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight">
-          {siteConfig.name}
+        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
+          <Image
+            src="/images/sagasia-logo.svg"
+            alt="Sagasia"
+            width={48}
+            height={48}
+            className="h-12 w-auto"
+            priority
+          />
+          <span className="sr-only sm:not-sr-only">{siteConfig.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
           {navItems.map((item) => {
