@@ -73,18 +73,27 @@ export default function MarketingHomePage() {
             <Badge>Strategic advisory</Badge>
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                Sagasia is a strategy and market intelligence partner helping businesses enter, expand, and compete
-                across Asia-Pacific.
+                Asia-Pacific strategy and market intelligence for decisive growth.
               </h1>
               <p className="text-lg text-text-dark/70">
-                Founded in 2025, Sagasia builds on 100+ strategy and market-entry engagements across the region,
-                delivering primary-research-led insights and pragmatic recommendations. We help clients cut through
-                complexity, validate growth opportunities, and make confident investment and expansion decisions across
-                ASEAN and adjacent markets.
+                We help leadership teams validate markets, prioritize growth, and execute expansion with primary
+                research and practical, decision-ready recommendations.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className={buttonClasses("primary")}>Start the conversation →</Link>
+            </div>
+            <div className="grid gap-3 text-sm text-text-dark/70 sm:grid-cols-2">
+              {[
+                "100+ regional strategy and market-entry engagements.",
+                "Primary research with local, on-the-ground insight.",
+                "Market entry, growth, and competitive positioning.",
+                "Execution-ready recommendations for leadership teams.",
+              ].map((item) => (
+                <div key={item} className="rounded-2xl border border-border/70 bg-background px-4 py-3">
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
           <HeroVisual
@@ -101,10 +110,9 @@ export default function MarketingHomePage() {
               </p>
               <h2 className="text-2xl font-semibold">About Us</h2>
               <p className="text-sm text-text-dark/70">
-                Sagasia is a strategy and market intelligence partner supporting businesses entering, expanding, and
-                competing across Asia-Pacific. Founded in 2025, we bring 100+ regional engagements and deliver
-                primary-research-led insights to help clients validate growth and make confident investment and
-                expansion decisions across ASEAN and adjacent markets.
+                Sagasia partners with leadership teams to enter, expand, and compete across Asia-Pacific. We combine
+                100+ regional engagements with research-led insight to help clients move from opportunity to action
+                across ASEAN and adjacent markets.
               </p>
             </div>
             <Link href="/contact" className={buttonClasses("primary")}>
