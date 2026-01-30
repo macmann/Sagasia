@@ -164,49 +164,54 @@ export default function MarketingHomePage() {
       </Section>
 
       <Section>
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Proof Points</p>
             <h2 className="text-3xl font-semibold">
               Experience from 100+ strategy, market entry, and competitive intelligence projects across Asia-Pacific
-              industries:
+              industries.
             </h2>
             <p className="text-base text-text-dark/70">
-              ✓ Energy &amp; Renewables
-              <br />
-              ✓ Healthcare &amp; Life Sciences
-              <br />
-              ✓ Automotive &amp; Mobility
-              <br />
-              ✓ Consumer &amp; Retail
-              <br />
-              ✓ Industrials &amp; Manufacturing
-              <br />
-              ✓ Technology, Media &amp; Telecommunications (TMT)
-              <br />
-              ✓ Logistics &amp; Transportation
-              <br />
-              ✓ Financial Services &amp; Investment
-              <br />
-              ✓ Infrastructure &amp; Utilities
-              <br />
-              ✓ Natural Resources &amp; Materials
+              Coverage spans priority sectors with proprietary insight slides on market size, structure, and competitive
+              dynamics.
             </p>
           </div>
-          <div className="rounded-2xl border border-border bg-section-bg p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Slides To-do list:</p>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-dark/70">
-              <li>
-                Coverage across 5–8 priority industries, each supported by 2–3 proprietary insight slides synthesizing
-                market size, structure, and competitive dynamics.
-              </li>
-              <li>(button to register and download specific slides / papers)</li>
-            </ul>
-          </div>
-          <div>
-            <Link href="/contact?reason=download" className={buttonClasses("secondary")}>
-              Register and download specific slides / papers
-            </Link>
+          <div className="grid gap-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+            <div className="rounded-2xl border border-border bg-background p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Industry coverage</p>
+              <ul className="mt-4 grid gap-3 text-sm text-text-dark/70 sm:grid-cols-2">
+                {[
+                  "Energy & Renewables",
+                  "Healthcare & Life Sciences",
+                  "Automotive & Mobility",
+                  "Consumer & Retail",
+                  "Industrials & Manufacturing",
+                  "Technology, Media & Telecommunications (TMT)",
+                  "Logistics & Transportation",
+                  "Financial Services & Investment",
+                  "Infrastructure & Utilities",
+                  "Natural Resources & Materials",
+                ].map((industry) => (
+                  <li key={industry} className="flex items-start gap-2 rounded-xl border border-border/60 p-3">
+                    <span className="text-secondary">✓</span>
+                    <span>{industry}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="space-y-4 rounded-2xl border border-border bg-section-bg p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Slides to-do list</p>
+              <ul className="space-y-3 text-sm text-text-dark/70">
+                <li>
+                  Coverage across 5–8 priority industries, each supported by 2–3 proprietary insight slides
+                  synthesizing market size, structure, and competitive dynamics.
+                </li>
+                <li>Register to download specific slides or papers.</li>
+              </ul>
+              <Link href="/contact?reason=download" className={buttonClasses("secondary")}>
+                Register and download specific slides / papers
+              </Link>
+            </div>
           </div>
         </div>
       </Section>
