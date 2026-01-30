@@ -12,19 +12,16 @@ export const metadata: Metadata = {
 const coreServices = [
   "Strategy & Growth Advisory",
   "Market Entry & Expansion",
-  "Competitor & Market Intelligence",
-  "Commercial Due Diligence & Opportunity Assessment",
-  "Go-to-Market & Commercial Strategy",
-  "Execution Enablement & Strategic PMO"
+  "Competitor Intelligence"
 ];
 
 const industryCoverage = [
-  "Technology & SaaS",
-  "Fintech & Payments",
   "Consumer & Retail",
-  "Industrial & Manufacturing",
-  "Healthcare & Life Sciences",
-  "Energy & Infrastructure"
+  "Energy",
+  "Automotive",
+  "Industrials",
+  "Healthcare",
+  "Investment"
 ];
 
 export default function AboutPage() {
@@ -35,18 +32,20 @@ export default function AboutPage() {
           <div className="space-y-4">
             <Badge>About Sagasia</Badge>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-              Strategic growth partner for modern leaders
+              Company Overview
             </h1>
             <p className="text-lg text-text-dark/70">
-              Asia-Pacific market intelligence and strategic advisory for teams ready to move decisively.
+              Sagasia began operations in 2025 to support companies with practical, insight-driven guidance for
+              entering and growing in Asia Pacific markets. Drawing on experience from 100+ strategy advisory and
+              market-entry projects across Asia, the firm delivers strategy, market validation, and competitor
+              intelligence grounded in primary research and local access. Today, Sagasia works with regional and
+              international clients across key industries to shape growth decisions, validate investment
+              opportunities, and support execution across ASEAN and adjacent markets.
             </p>
             <p className="border-l-2 border-border pl-4 text-base text-text-dark/70">
-              Sagasia is a strategy and market intelligence advisory partner supporting businesses entering, expanding,
-              and competing across Asia-Pacific. Founded in 2025, Sagasia draws on experience from 100+ strategy and
-              market-entry engagements across the region, delivering insight-driven recommendations grounded in primary
-              research, local access, and on-the-ground execution realities. We help clients cut through market
-              complexity, validate growth opportunities, and make confident investment and expansion decisions across
-              ASEAN and adjacent markets.
+              Core Services: Strategy &amp; Growth Advisory, Market Entry &amp; Expansion, Competitor Intelligence
+              <br />
+              Industry Coverage: Consumer &amp; Retail, Energy, Automotive, Industrials, Healthcare, Investment,
             </p>
           </div>
           <HeroVisual
@@ -87,16 +86,32 @@ export default function AboutPage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Mission &amp; Vision</p>
-            <h2 className="text-3xl font-semibold text-text-dark">Clarity that enables confident growth.</h2>
+            <h2 className="text-3xl font-semibold text-text-dark">Mission &amp; Vision</h2>
           </div>
+          <p className="text-base text-text-dark/70">
+            In Sagasia, we believe in becoming the most trusted strategic partner for businesses navigating the dynamic
+            Asia-Pacific landscape, transforming market complexity into clear, actionable pathways for sustainable
+            growth and market leadership.
+          </p>
+          <p className="text-base font-semibold text-text-dark">We are committed to:</p>
           <ul className="space-y-3 text-base text-text-dark/70">
             <li>
-              <span className="font-semibold text-text-dark">Vision:</span> To be the most trusted Asia-Pacific partner
-              for leaders pursuing responsible growth and market expansion.
+              Deliver actionable APAC growth strategies grounded in local realities.
             </li>
             <li>
-              <span className="font-semibold text-text-dark">Commitment:</span> Deliver locally grounded insight,
-              decisive strategy, and execution readiness for every engagement.
+              Validate market opportunities through rigorous primary research and analysis.
+            </li>
+            <li>
+              Provide decisive competitor intelligence to inform strategic positioning.
+            </li>
+            <li>
+              Support execution with practical guidance for ASEAN market success.
+            </li>
+            <li>
+              Leverage deep on-the-ground access for true market insight.
+            </li>
+            <li>
+              Transform complex regional dynamics into clear, executable client decisions.
             </li>
           </ul>
         </div>
@@ -106,30 +121,54 @@ export default function AboutPage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Operating Philosophy</p>
-            <h2 className="text-3xl font-semibold text-text-dark">How we move from insight to action.</h2>
+            <h2 className="text-3xl font-semibold text-text-dark">Operating Philosophy</h2>
           </div>
-          <ol className="space-y-3 text-base text-text-dark/70">
-            <li>
-              <span className="font-semibold text-text-dark">1.</span> Diagnose with Local Depth
-            </li>
-            <li>
-              <span className="font-semibold text-text-dark">2.</span> Architect Adaptive Strategy
-            </li>
-            <li>
-              <span className="font-semibold text-text-dark">3.</span> Co-Create Actionable Pathways
-            </li>
-            <li>
-              <span className="font-semibold text-text-dark">4.</span> Enable Execution &amp; Agility
-            </li>
-          </ol>
+          <div className="grid gap-4 md:grid-cols-2">
+            <Card className="space-y-3">
+              <h3 className="text-lg font-semibold text-text-dark">1. Diagnose with Local Depth:</h3>
+              <p className="text-sm text-text-dark/70">
+                We begin by deeply diagnosing the client's challenge through rigorous market assessment, competitive
+                benchmarking, and local insight. This establishes a fact-based, granular understanding of the market
+                landscape, its unique dynamics, and the specific opportunities or threats at play.
+              </p>
+            </Card>
+            <Card className="space-y-3">
+              <h3 className="text-lg font-semibold text-text-dark">2. Architect Adaptive Strategy:</h3>
+              <p className="text-sm text-text-dark/70">
+                Synthesize diagnostic findings to architect clear, adaptive strategies and potential new business
+                models. This step translates market realities into actionable plans for growth, innovation, or market
+                entry, ensuring recommendations are both ambitious and grounded in local operational feasibility.
+              </p>
+            </Card>
+            <Card className="space-y-3">
+              <h3 className="text-lg font-semibold text-text-dark">3. Co-Create Actionable Pathways:</h3>
+              <p className="text-sm text-text-dark/70">
+                Engage clients to stress-test and refine strategic options into prioritized, executable pathways. This
+                collaborative phase ensures alignment, builds client ownership, and details the operational steps,
+                resources, and metrics required to move from insight to implementation.
+              </p>
+            </Card>
+            <Card className="space-y-3">
+              <h3 className="text-lg font-semibold text-text-dark">4. Enable Execution &amp; Agility:</h3>
+              <p className="text-sm text-text-dark/70">
+                Partner through initial execution to embed capabilities, monitor progress, and adapt to market
+                feedback. This final step focuses on transferring knowledge, building client resilience, and ensuring
+                the strategy remains agile and responsive to the fast-changing Asian business environment.
+              </p>
+            </Card>
+          </div>
         </div>
       </Section>
 
       <Section id="leadership-snapshot">
         <div className="space-y-6">
           <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Leadership Snapshot</p>
-            <h2 className="text-3xl font-semibold text-text-dark">Seasoned operators and advisors.</h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">
+              Team Profile / Leadership Snapshot
+            </p>
+            <h2 className="text-3xl font-semibold text-text-dark">
+              High-level introduction to expertise and experience. (will confirm again)
+            </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {[1, 2, 3].map((card) => (
