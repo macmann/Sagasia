@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/Badge";
 import { Card } from "@/components/Card";
+import { HeroVisual } from "@/components/HeroVisual";
 import { InsightDisclaimer } from "@/components/InsightDisclaimer";
 import { Section } from "@/components/Section";
 import { getInsights } from "@/lib/mdx/getInsights";
@@ -16,12 +17,20 @@ export default async function InsightsPage() {
 
   return (
     <div className="space-y-12">
-      <Section className="space-y-4">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Insights</h1>
-        <p className="text-lg text-text-dark/70">
-          Market perspectives and advisory playbooks from the Sagasia team.
-        </p>
-        <InsightDisclaimer />
+      <Section className="section-gradient px-8">
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="space-y-4">
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Insights</h1>
+            <p className="text-lg text-text-dark/70">
+              Market perspectives and advisory playbooks from the Sagasia team.
+            </p>
+            <InsightDisclaimer />
+          </div>
+          <HeroVisual
+            src="/images/insights-hero.svg"
+            alt="Abstract illustration representing market insights and research"
+          />
+        </div>
       </Section>
 
       <Section>
