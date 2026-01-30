@@ -164,7 +164,7 @@ export default function MarketingHomePage() {
       </Section>
 
       <Section>
-        <div className="space-y-8">
+        <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Proof Points</p>
             <h2 className="text-3xl font-semibold">
@@ -176,10 +176,10 @@ export default function MarketingHomePage() {
               dynamics.
             </p>
           </div>
-          <div className="grid gap-6 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
-            <div className="rounded-2xl border border-border bg-background p-6">
+          <div className="grid gap-4 lg:grid-cols-[1.4fr_0.6fr] lg:items-start">
+            <Card className="space-y-4">
               <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Industry coverage</p>
-              <ul className="mt-4 grid gap-3 text-sm text-text-dark/70 sm:grid-cols-2">
+              <ul className="grid gap-2 text-sm text-text-dark/70 sm:grid-cols-2">
                 {[
                   "Energy & Renewables",
                   "Healthcare & Life Sciences",
@@ -192,14 +192,14 @@ export default function MarketingHomePage() {
                   "Infrastructure & Utilities",
                   "Natural Resources & Materials",
                 ].map((industry) => (
-                  <li key={industry} className="flex items-start gap-2 rounded-xl border border-border/60 p-3">
+                  <li key={industry} className="flex items-start gap-2 rounded-xl border border-border/60 p-2">
                     <span className="text-secondary">✓</span>
                     <span>{industry}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="space-y-4 rounded-2xl border border-border bg-section-bg p-6">
+            </Card>
+            <Card className="space-y-4 bg-section-bg">
               <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Slides to-do list</p>
               <ul className="space-y-3 text-sm text-text-dark/70">
                 <li>
@@ -211,7 +211,7 @@ export default function MarketingHomePage() {
               <Link href="/contact?reason=download" className={buttonClasses("secondary")}>
                 Register and download specific slides / papers
               </Link>
-            </div>
+            </Card>
           </div>
         </div>
       </Section>
