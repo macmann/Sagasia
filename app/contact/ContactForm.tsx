@@ -31,13 +31,13 @@ type FieldProps = {
 function Field({ id, label, name, type = "text", placeholder, error }: FieldProps) {
   return (
     <div className="space-y-2">
-      <label className="text-sm font-semibold text-slate-700" htmlFor={id}>
+      <label className="text-sm font-semibold text-text-dark/80" htmlFor={id}>
         {label}
       </label>
       <input
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
-        className="w-full rounded-xl border border-slate-200 px-4 py-2 text-sm"
+        className="w-full rounded-xl border border-border px-4 py-2 text-sm text-text-dark placeholder:text-text-dark/60"
         id={id}
         name={name}
         placeholder={placeholder}
@@ -139,7 +139,7 @@ export function ContactForm() {
           <div
             className={`rounded-xl border px-4 py-3 text-sm ${
               state.status === "success"
-                ? "border-emerald-200 bg-emerald-50 text-emerald-800"
+                ? "border-accent/30 bg-accent/10 text-text-dark"
                 : "border-rose-200 bg-rose-50 text-rose-700"
             }`}
             role="status"
@@ -149,7 +149,7 @@ export function ContactForm() {
           </div>
         ) : null}
         {reason === "download" ? (
-          <p className="text-sm text-slate-600">
+          <p className="text-sm text-text-dark/70">
             Share your details to access the proof points and download materials.
           </p>
         ) : null}
@@ -187,13 +187,13 @@ export function ContactForm() {
             error={state.fieldErrors.industry}
           />
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700" htmlFor="inquiryType">
+            <label className="text-sm font-semibold text-text-dark/80" htmlFor="inquiryType">
               Type of inquiry
             </label>
             <select
               aria-invalid={Boolean(state.fieldErrors.inquiryType)}
               aria-describedby={state.fieldErrors.inquiryType ? "inquiryType-error" : undefined}
-              className="w-full rounded-xl border border-slate-200 px-4 py-2 text-sm"
+              className="w-full rounded-xl border border-border px-4 py-2 text-sm text-text-dark"
               id="inquiryType"
               name="inquiryType"
               required
@@ -217,13 +217,13 @@ export function ContactForm() {
           </div>
         </div>
         <div className="space-y-2">
-          <label className="text-sm font-semibold text-slate-700" htmlFor="description">
+          <label className="text-sm font-semibold text-text-dark/80" htmlFor="description">
             Brief description
           </label>
           <textarea
             aria-invalid={Boolean(state.fieldErrors.description)}
             aria-describedby={state.fieldErrors.description ? "description-error" : undefined}
-            className="min-h-[160px] w-full rounded-xl border border-slate-200 px-4 py-2 text-sm"
+            className="min-h-[160px] w-full rounded-xl border border-border px-4 py-2 text-sm text-text-dark placeholder:text-text-dark/60"
             id="description"
             name="description"
             placeholder="Tell us about your objectives, stakeholders, and timeline."

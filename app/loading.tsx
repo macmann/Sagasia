@@ -1,3 +1,3 @@
 export default function Loading() {
-  return <div className="text-slate-600">Loading...</div>;
+  return <div className="text-text-dark/70">Loading...</div>;
 }

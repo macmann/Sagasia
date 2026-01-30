@@ -72,7 +72,7 @@ export default function MarketingHomePage() {
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
                 Strategy and intelligence for Asia-Pacific growth leaders.
               </h1>
-              <p className="text-lg text-slate-600">
+              <p className="text-lg text-text-dark/70">
                 We help leadership teams move with confidence by translating complex market realities into clear,
                 execution-ready decisions.
               </p>
@@ -89,13 +89,13 @@ export default function MarketingHomePage() {
           />
         </div>
         <div className="mt-10">
-          <Card className="space-y-6 bg-slate-50">
+          <Card className="space-y-6 bg-section-bg">
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <p className="text-xs font-semibold uppercase tracking-wide text-text-dark/60">
                 About Sagasia
               </p>
               <h2 className="text-2xl font-semibold">Built for decisive market entry and growth.</h2>
-              <p className="text-sm text-slate-600">
+              <p className="text-sm text-text-dark/70">
                 Sagasia is an independent Asia-Pacific strategy and market intelligence firm supporting
                 founders, executives, and investors with local depth, rigorous analysis, and commercially grounded
                 recommendations.
@@ -111,9 +111,9 @@ export default function MarketingHomePage() {
       <Section className="section-gradient px-8">
         <div className="space-y-6">
           <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">About Us</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">About Us</p>
             <h2 className="text-3xl font-semibold">Local insight with global expectations.</h2>
-            <p className="text-base text-slate-600">
+            <p className="text-base text-text-dark/70">
               Sagasia positions leadership teams to enter, defend, and expand in Asia-Pacific by combining
               on-the-ground intelligence with board-ready strategy, ensuring every recommendation is ready for
               execution.
@@ -125,23 +125,23 @@ export default function MarketingHomePage() {
       <Section className="section-dots px-8">
         <div className="space-y-4">
           <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">What We Offer</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">What We Offer</p>
             <h2 className="text-3xl font-semibold">Clarity, confidence, and momentum.</h2>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <li className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+            <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
               Local depth with strategic rigor.
             </li>
-            <li className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+            <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
               Insight before commitment.
             </li>
-            <li className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+            <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
               Actionable, execution-ready outputs.
             </li>
-            <li className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+            <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
               Independent competitor intelligence.
             </li>
-            <li className="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+            <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
               Asia-Pacific focus by design.
             </li>
           </ul>
@@ -151,9 +151,9 @@ export default function MarketingHomePage() {
       <Section>
         <div className="space-y-6">
           <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Service Snapshot</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Service Snapshot</p>
             <h2 className="text-3xl font-semibold">Focused support across the growth lifecycle.</h2>
-            <p className="text-base text-slate-600">
+            <p className="text-base text-text-dark/70">
               Six core service lines built to provide insight, strategy, and execution depth.
             </p>
           </div>
@@ -162,8 +162,8 @@ export default function MarketingHomePage() {
               <Card key={service.title} className="flex h-full flex-col justify-between gap-4">
                 <div className="space-y-3">
                   <Icon name={service.icon} />
-                  <h3 className="text-xl font-semibold text-slate-900">{service.title}</h3>
-                  <p className="text-sm text-slate-600">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-text-dark">{service.title}</h3>
+                  <p className="text-sm text-text-dark/70">{service.description}</p>
                 </div>
                 <Link href={service.href} className={buttonClasses("secondary")}>
                   Explore
@@ -177,16 +177,16 @@ export default function MarketingHomePage() {
       <Section>
         <div className="space-y-6">
           <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Proof Points</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Proof Points</p>
             <h2 className="text-3xl font-semibold">Credible signal across strategic mandates.</h2>
-            <p className="text-base text-slate-600">
+            <p className="text-base text-text-dark/70">
               Experience across 100+ strategy, market entry, and competitive intelligence projects for global and
               regional leadership teams.
             </p>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Industries covered</p>
-            <div className="mt-4 grid gap-3 text-sm text-slate-600 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="rounded-2xl border border-border bg-section-bg p-6">
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Industries covered</p>
+            <div className="mt-4 grid gap-3 text-sm text-text-dark/70 sm:grid-cols-2 lg:grid-cols-3">
               {industryHighlights.map((industry) => (
                 <div key={industry.label} className="flex items-center gap-3">
                   <Icon name={industry.icon} category="industries" size={20} />
@@ -204,14 +204,14 @@ export default function MarketingHomePage() {
       </Section>
 
       <Section>
-        <div className="rounded-3xl border border-slate-200 bg-slate-50 p-8">
+        <div className="rounded-3xl border border-border bg-section-bg p-8">
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
             <div className="space-y-3">
-              <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Next Steps</p>
+              <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Next Steps</p>
               <h2 className="text-3xl font-semibold">Discuss Your Growth or Market Entry Challenge</h2>
-              <p className="text-base text-slate-600">
+              <p className="text-base text-text-dark/70">
                 Reach the team directly at{" "}
-                <a href="mailto:contact@sagasia.com" className="font-semibold text-slate-900 underline">
+                <a href="mailto:contact@sagasia.com" className="font-semibold text-secondary underline hover:text-primary">
                   contact@sagasia.com
                 </a>{" "}
                 or share your objectives to start a tailored engagement.

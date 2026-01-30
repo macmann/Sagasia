@@ -41,9 +41,9 @@ export default function IndustriesPage() {
       <Section className="section-gradient px-8">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Industries</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Industries</p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Industries we advise</h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-text-dark/70">
               We support leadership teams navigating complex growth stories, regulated markets, and global expansion.
             </p>
           </div>
@@ -57,14 +57,14 @@ export default function IndustriesPage() {
       <Section className="section-dots px-8">
         <div className="space-y-8">
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Target industries</p>
-            <h2 className="text-2xl font-semibold text-slate-900">Where we focus</h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Target industries</p>
+            <h2 className="text-2xl font-semibold text-text-dark">Where we focus</h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             {targetIndustries.map((industry) => (
               <Card key={industry.label} className="flex items-center gap-4 py-4">
                 <Icon name={industry.icon} category="industries" />
-                <p className="text-sm font-semibold text-slate-900">{industry.label}</p>
+                <p className="text-sm font-semibold text-text-dark">{industry.label}</p>
               </Card>
             ))}
           </div>
@@ -74,18 +74,18 @@ export default function IndustriesPage() {
       <Section>
         <div className="space-y-6">
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">
               Key challenges we help clients navigate
             </p>
-            <h2 className="text-2xl font-semibold text-slate-900">Clarity, competitive edge, and execution</h2>
+            <h2 className="text-2xl font-semibold text-text-dark">Clarity, competitive edge, and execution</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {keyChallenges.map((challenge, index) => (
               <Card key={challenge} className="space-y-4 py-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-sm font-semibold text-slate-700">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-section-bg text-sm font-semibold text-text-dark/80">
                   {String(index + 1).padStart(2, "0")}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-900">{challenge}</h3>
+                <h3 className="text-lg font-semibold text-text-dark">{challenge}</h3>
               </Card>
             ))}
           </div>
@@ -95,14 +95,14 @@ export default function IndustriesPage() {
       <Section>
         <div className="space-y-6">
           <div className="space-y-3">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Adaptation approach</p>
-            <h2 className="text-2xl font-semibold text-slate-900">How we tailor every engagement</h2>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Adaptation approach</p>
+            <h2 className="text-2xl font-semibold text-text-dark">How we tailor every engagement</h2>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {adaptationApproach.map((approach) => (
               <Card key={approach} className="flex items-start gap-3 py-4">
-                <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-slate-900" aria-hidden="true" />
-                <p className="text-sm font-semibold text-slate-900">{approach}</p>
+                <span className="mt-1 inline-flex h-2 w-2 flex-none rounded-full bg-primary" aria-hidden="true" />
+                <p className="text-sm font-semibold text-text-dark">{approach}</p>
               </Card>
             ))}
           </div>

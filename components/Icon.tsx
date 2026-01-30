@@ -24,7 +24,7 @@ export function Icon({
   return (
     <span
       className={cn(
-        "inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-slate-700",
+        "inline-flex items-center justify-center rounded-2xl border border-border bg-section-bg text-text-dark/80",
         containerClassName
       )}
       style={{ width: size + 20, height: size + 20 }}

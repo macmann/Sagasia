@@ -15,7 +15,7 @@ export const MDXComponents: MDXComponentsType = {
       <code
         {...props}
         className={[
-          "rounded-md bg-slate-100 px-1.5 py-0.5 text-[0.9em]",
+          "rounded-md bg-section-bg px-1.5 py-0.5 text-[0.9em]",
           (props as any).className ?? ""
         ].join(" ")}
       />

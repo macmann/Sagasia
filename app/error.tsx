@@ -12,7 +12,7 @@ export default function ErrorPage({ error, reset }: { error: Error & { digest?: 
   return (
     <div className="space-y-4">
       <h1 className="text-3xl font-semibold tracking-tight">Something went wrong.</h1>
-      <p className="text-slate-600">{error.message}</p>
+      <p className="text-text-dark/70">{error.message}</p>
       <div className="flex flex-wrap gap-3">
         <button className={buttonClasses("primary")} onClick={() => reset()} type="button">
           Try again

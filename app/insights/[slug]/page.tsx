@@ -46,14 +46,14 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
   return (
     <article className="prose max-w-none">
       <div className="not-prose mb-8 space-y-2">
-        <div className="flex flex-wrap items-center gap-2 text-sm text-slate-500">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-text-dark/60">
           <span>{new Date(post.date).toLocaleDateString()}</span>
           {post.tags?.length
             ? post.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)
             : null}
         </div>
-        <h1 className="text-3xl font-semibold tracking-tight text-slate-900">{post.title}</h1>
-        {post.summary ? <p className="text-slate-600">{post.summary}</p> : null}
+        <h1 className="text-3xl font-semibold tracking-tight text-text-dark">{post.title}</h1>
+        {post.summary ? <p className="text-text-dark/70">{post.summary}</p> : null}
         <InsightDisclaimer />
       </div>
 

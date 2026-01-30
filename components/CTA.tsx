@@ -19,17 +19,17 @@ export function CTA({
   secondaryLabel = "Explore services"
 }: CTAProps) {
   return (
-    <Card className="bg-slate-900 text-white">
+    <Card className="bg-primary text-white">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="space-y-3">
           <h3 className="text-2xl font-semibold text-white sm:text-3xl">{title}</h3>
-          <p className="text-sm text-slate-200 sm:text-base">{description}</p>
+          <p className="text-sm text-white/80 sm:text-base">{description}</p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
-          <Button className="bg-white text-slate-900 hover:bg-slate-100" href={primaryHref} variant="secondary">
+          <Button href={primaryHref} variant="primary">
             {primaryLabel}
           </Button>
-          <Button className="text-white hover:bg-white/10" href={secondaryHref} variant="ghost">
+          <Button className="text-white hover:bg-background/10" href={secondaryHref} variant="ghost">
             {secondaryLabel}
           </Button>
         </div>

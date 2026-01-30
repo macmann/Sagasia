@@ -22,12 +22,12 @@ export function Section({
       {title || subtitle ? (
         <div className="mb-8 space-y-3">
           {title ? (
-            <h2 className={cn("text-3xl font-semibold text-slate-900 sm:text-4xl", headingClassName)}>
+            <h2 className={cn("text-3xl font-semibold text-text-dark sm:text-4xl", headingClassName)}>
               {title}
             </h2>
           ) : null}
           {subtitle ? (
-            <p className={cn("text-sm text-slate-600 sm:text-base", subheadingClassName)}>{subtitle}</p>
+            <p className={cn("text-sm text-text-dark/70 sm:text-base", subheadingClassName)}>{subtitle}</p>
           ) : null}
         </div>
       ) : null}
