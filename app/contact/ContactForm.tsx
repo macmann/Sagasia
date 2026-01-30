@@ -148,11 +148,9 @@ export function ContactForm() {
             {state.message}
           </div>
         ) : null}
-        {reason === "download" ? (
-          <p className="text-sm text-text-dark/70">
-            Share your details to access the proof points and download materials.
-          </p>
-        ) : null}
+        <p className="text-sm text-text-dark/70">
+          Please share a brief overview of your situation so we can direct your inquiry appropriately.
+        </p>
         <Field
           id="name"
           label="Name"
@@ -172,7 +170,7 @@ export function ContactForm() {
         </div>
         <Field
           id="email"
-          label="Email address"
+          label="Email Address"
           name="email"
           type="email"
           placeholder="you@sagasia.com"
@@ -188,7 +186,7 @@ export function ContactForm() {
           />
           <div className="space-y-2">
             <label className="text-sm font-semibold text-text-dark/80" htmlFor="inquiryType">
-              Type of inquiry
+              Type of Inquiry
             </label>
             <select
               aria-invalid={Boolean(state.fieldErrors.inquiryType)}
@@ -218,7 +216,7 @@ export function ContactForm() {
         </div>
         <div className="space-y-2">
           <label className="text-sm font-semibold text-text-dark/80" htmlFor="description">
-            Brief description
+            Brief Description of Your Objective or Challenge
           </label>
           <textarea
             aria-invalid={Boolean(state.fieldErrors.description)}

@@ -17,49 +17,52 @@ export default function MarketingHomePage() {
   const serviceSnapshots = [
     {
       title: "Strategy & Growth Advisory",
-      description: "Board-level guidance that clarifies growth priorities and aligns leadership decisions.",
+      description:
+        "Corporate and business strategy, growth prioritization, capital allocation, and investment thesis development across Asia-Pacific.",
       href: "/services#strategy-growth-advisory",
       icon: "strategy-growth",
+      buttonText: "Explore Strategy & Growth Advisory →",
     },
     {
       title: "Market Entry & Expansion",
-      description: "Go deeper on the right markets with local signal, partner mapping, and entry pathways.",
+      description:
+        "Market validation, go-to-market design, partner or acquisition screening, and expansion roadmaps across ASEAN and APAC.",
       href: "/services#market-entry-expansion",
       icon: "market-entry",
+      buttonText: "Explore Market Entry & Expansion →",
     },
     {
       title: "Competitor & Market Intelligence",
-      description: "Independent intelligence to understand share shifts, disruptors, and white-space moves.",
+      description:
+        "Independent competitor benchmarking, pricing and value-chain analysis, channel mapping, and market structure insights.",
       href: "/services#competitor-market-intelligence",
       icon: "competitor-intelligence",
+      buttonText: "Explore Competitor & Market Intelligence →",
     },
     {
       title: "Commercial Due Diligence & Opportunity Assessment",
-      description: "Evidence-backed sizing, demand validation, and risk assessments for decisive moves.",
+      description:
+        "Primary-research-led commercial diligence, market attractiveness assessment, and risk evaluation for investments and strategic decisions.",
       href: "/services#commercial-due-diligence",
       icon: "commercial-due-diligence",
+      buttonText: "Explore Commercial Due Diligence →",
     },
     {
       title: "Go-to-Market & Commercial Strategy",
-      description: "Positioning, pricing, and channel strategy that turns insight into market action.",
+      description:
+        "Go-to-market strategy design, pricing and value proposition development, and channel and sales model optimization.",
       href: "/services#go-to-market-strategy",
       icon: "go-to-market",
+      buttonText: "Explore Go-to-Market Strategy →",
     },
     {
       title: "Execution Enablement & Strategic PMO",
-      description: "Operating rhythms, KPI alignment, and executive PMO support to deliver outcomes.",
+      description:
+        "Strategy implementation support, initiative sequencing, governance structuring, and performance tracking across markets.",
       href: "/services#execution-enablement",
       icon: "execution-enablement",
+      buttonText: "Explore Execution Enablement →",
     },
-  ];
-
-  const industryHighlights = [
-    { label: "Technology & SaaS", icon: "tmt" },
-    { label: "Fintech & Payments", icon: "financial-services" },
-    { label: "Consumer & Retail", icon: "consumer-retail" },
-    { label: "Industrial & Manufacturing", icon: "industrials-manufacturing" },
-    { label: "Healthcare & Life Sciences", icon: "healthcare-life-sciences" },
-    { label: "Energy & Infrastructure", icon: "energy-renewables" },
   ];
 
   return (
@@ -70,16 +73,18 @@ export default function MarketingHomePage() {
             <Badge>Strategic advisory</Badge>
             <div className="space-y-4">
               <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-                Strategy and intelligence for Asia-Pacific growth leaders.
+                Sagasia is a strategy and market intelligence advisory partner supporting businesses entering,
+                expanding, and competing across Asia-Pacific.
               </h1>
               <p className="text-lg text-text-dark/70">
-                We help leadership teams move with confidence by translating complex market realities into clear,
-                execution-ready decisions.
+                Founded in 2025, Sagasia draws on experience from 100+ strategy and market-entry engagements across the
+                region, delivering insight-driven recommendations grounded in primary research, local access, and
+                on-the-ground execution realities. We help clients cut through market complexity, validate growth
+                opportunities, and make confident investment and expansion decisions across ASEAN and adjacent markets.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href="/contact" className={buttonClasses("primary")}>Start the conversation</Link>
-              <Link href="/services" className={buttonClasses("secondary")}>View advisory services</Link>
+              <Link href="/contact" className={buttonClasses("primary")}>Start the conversation →</Link>
             </div>
           </div>
           <HeroVisual
@@ -94,31 +99,20 @@ export default function MarketingHomePage() {
               <p className="text-xs font-semibold uppercase tracking-wide text-text-dark/60">
                 About Sagasia
               </p>
-              <h2 className="text-2xl font-semibold">Built for decisive market entry and growth.</h2>
+              <h2 className="text-2xl font-semibold">About Us</h2>
               <p className="text-sm text-text-dark/70">
-                Sagasia is an independent Asia-Pacific strategy and market intelligence firm supporting
-                founders, executives, and investors with local depth, rigorous analysis, and commercially grounded
-                recommendations.
+                Sagasia is a strategy and market intelligence advisory partner supporting businesses entering,
+                expanding, and competing across Asia-Pacific. Founded in 2025, Sagasia draws on experience from 100+
+                strategy and market-entry engagements across the region, delivering insight-driven recommendations
+                grounded in primary research, local access, and on-the-ground execution realities. We help clients cut
+                through market complexity, validate growth opportunities, and make confident investment and expansion
+                decisions across ASEAN and adjacent markets.
               </p>
             </div>
             <Link href="/contact" className={buttonClasses("primary")}>
-              Share your objectives
+              Start the conversation →
             </Link>
           </Card>
-        </div>
-      </Section>
-
-      <Section className="section-gradient px-8">
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">About Us</p>
-            <h2 className="text-3xl font-semibold">Local insight with global expectations.</h2>
-            <p className="text-base text-text-dark/70">
-              Sagasia positions leadership teams to enter, defend, and expand in Asia-Pacific by combining
-              on-the-ground intelligence with board-ready strategy, ensuring every recommendation is ready for
-              execution.
-            </p>
-          </div>
         </div>
       </Section>
 
@@ -126,7 +120,7 @@ export default function MarketingHomePage() {
         <div className="space-y-4">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">What We Offer</p>
-            <h2 className="text-3xl font-semibold">Clarity, confidence, and momentum.</h2>
+            <h2 className="text-3xl font-semibold">What We Offer</h2>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <li className="rounded-2xl border border-border bg-background p-4 text-sm text-text-dark/70">
@@ -152,10 +146,7 @@ export default function MarketingHomePage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Service Snapshot</p>
-            <h2 className="text-3xl font-semibold">Focused support across the growth lifecycle.</h2>
-            <p className="text-base text-text-dark/70">
-              Six core service lines built to provide insight, strategy, and execution depth.
-            </p>
+            <h2 className="text-3xl font-semibold">Service Snapshot</h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceSnapshots.map((service) => (
@@ -166,7 +157,7 @@ export default function MarketingHomePage() {
                   <p className="text-sm text-text-dark/70">{service.description}</p>
                 </div>
                 <Link href={service.href} className={buttonClasses("secondary")}>
-                  Explore
+                  {service.buttonText}
                 </Link>
               </Card>
             ))}
@@ -178,26 +169,45 @@ export default function MarketingHomePage() {
         <div className="space-y-6">
           <div className="space-y-2">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Proof Points</p>
-            <h2 className="text-3xl font-semibold">Credible signal across strategic mandates.</h2>
+            <h2 className="text-3xl font-semibold">
+              Experience across 100+ strategy, market entry, and competitive intelligence projects across a variety of
+              industries in Asia-Pacific:
+            </h2>
             <p className="text-base text-text-dark/70">
-              Experience across 100+ strategy, market entry, and competitive intelligence projects for global and
-              regional leadership teams.
+              ✓ Energy &amp; Renewables
+              <br />
+              ✓ Healthcare &amp; Life Sciences
+              <br />
+              ✓ Automotive &amp; Mobility
+              <br />
+              ✓ Consumer &amp; Retail
+              <br />
+              ✓ Industrials &amp; Manufacturing
+              <br />
+              ✓ Technology, Media &amp; Telecommunications (TMT)
+              <br />
+              ✓ Logistics &amp; Transportation
+              <br />
+              ✓ Financial Services &amp; Investment
+              <br />
+              ✓ Infrastructure &amp; Utilities
+              <br />
+              ✓ Natural Resources &amp; Materials
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-section-bg p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Industries covered</p>
-            <div className="mt-4 grid gap-3 text-sm text-text-dark/70 sm:grid-cols-2 lg:grid-cols-3">
-              {industryHighlights.map((industry) => (
-                <div key={industry.label} className="flex items-center gap-3">
-                  <Icon name={industry.icon} category="industries" size={20} />
-                  <span>{industry.label}</span>
-                </div>
-              ))}
-            </div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Slides To-do list:</p>
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-dark/70">
+              <li>
+                Coverage across 5–8 priority industries, each supported by 2–3 proprietary insight slides synthesizing
+                market size, structure, and competitive dynamics.
+              </li>
+              <li>(button to register and download specific slides / papers)</li>
+            </ul>
           </div>
           <div>
             <Link href="/contact?reason=download" className={buttonClasses("secondary")}>
-              Download proof points
+              Register and download specific slides / papers
             </Link>
           </div>
         </div>
@@ -210,16 +220,23 @@ export default function MarketingHomePage() {
               <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Next Steps</p>
               <h2 className="text-3xl font-semibold">Discuss Your Growth or Market Entry Challenge</h2>
               <p className="text-base text-text-dark/70">
-                Reach the team directly at{" "}
-                <a href="mailto:contact@sagasia.com" className="font-semibold text-secondary underline hover:text-primary">
-                  contact@sagasia.com
-                </a>{" "}
-                or share your objectives to start a tailored engagement.
+                Whether you are assessing a new market, validating an investment, or sharpening competitive strategy,
+                SCP is ready to support.
               </p>
+              <ul className="space-y-2 text-sm text-text-dark/70">
+                <li>
+                  Email:{" "}
+                  <a href="mailto:info@sagasia.com" className="font-semibold text-secondary underline hover:text-primary">
+                    info@sagasia.com
+                  </a>
+                </li>
+                <li>Contact Form: Submit an inquiry to start the conversation</li>
+                <li>Initial Discussion: Confidential, focused, and insight-led</li>
+              </ul>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
               <Link href="/contact" className={buttonClasses("primary")}>
-                Talk with Sagasia
+                Start the conversation →
               </Link>
             </div>
           </div>

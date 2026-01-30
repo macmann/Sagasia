@@ -1,9 +1,7 @@
-import Link from "next/link";
 import { Card } from "@/components/Card";
 import { HeroVisual } from "@/components/HeroVisual";
 import { Icon } from "@/components/Icon";
 import { Section } from "@/components/Section";
-import { buttonClasses } from "@/components/Button";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +16,9 @@ const services = [
     title: "Strategy & Growth Advisory",
     icon: "strategy-growth",
     description:
-      "We partner with leadership teams to sharpen growth priorities, align decision-makers, and define the moves that matter most. Our advisory work combines board-level insight with grounded market realities, so strategies are both ambitious and executable.",
+      "Shape clear, fact-based strategies to drive sustainable growth and competitive advantage across Asia-Pacific.",
+    summary:
+      "Sagasia supports leadership teams on corporate and business strategy, growth prioritization, and capital allocation decisions. Our work focuses on clarifying strategic direction and translating ambition into executable growth pathways.",
     supports: [
       "Corporate and business unit strategy",
       "Growth roadmap and market prioritization",
@@ -31,7 +31,9 @@ const services = [
     title: "Market Entry & Expansion",
     icon: "market-entry",
     description:
-      "We help clients validate demand, size opportunities, and determine the best entry pathway for Asia-Pacific markets. Each engagement translates local market signals into a clear route-to-market plan and partner strategy.",
+      "Reduce entry risk and accelerate execution when entering or scaling in ASEAN and APAC markets.",
+    summary:
+      "We help clients validate market attractiveness, understand local dynamics, and design entry or expansion strategies grounded in primary research and operational feasibility.",
     supports: [
       "Market sizing and demand validation",
       "Go-to-market and route-to-market design",
@@ -44,7 +46,9 @@ const services = [
     title: "Competitor & Market Intelligence",
     icon: "competitor-intelligence",
     description:
-      "Our intelligence programs decode competitive moves, pricing dynamics, and customer behavior shifts across the region. Leaders use these insights to defend market share, reposition offerings, and anticipate disruption.",
+      "Deliver independent, decision-grade intelligence on competitors, customers, and market structure.",
+    summary:
+      "Sagasia provides objective competitor and market insight to inform strategic positioning, pricing decisions, and competitive response strategies.",
     supports: [
       "Competitor benchmarking and positioning",
       "Pricing and value-chain analysis",
@@ -57,7 +61,9 @@ const services = [
     title: "Commercial Due Diligence & Opportunity Assessment",
     icon: "commercial-due-diligence",
     description:
-      "We deliver independent diligence that validates market attractiveness, demand reality, and key risks before capital is committed. Investors and corporate development teams rely on our analysis to move forward with confidence.",
+      "Support confident investment and strategic decisions with rigorous, primary-research-led diligence.",
+    summary:
+      "We assist corporates and investors in assessing market opportunities, risks, and upside potential prior to capital deployment or strategic commitment.",
     supports: [
       "Commercial due diligence for M&A or investments",
       "Market attractiveness and growth validation",
@@ -70,7 +76,9 @@ const services = [
     title: "Go-to-Market & Commercial Strategy",
     icon: "go-to-market",
     description:
-      "We design commercialization strategies that connect customer insight with clear positioning and pricing. The result is a go-to-market plan that strengthens channel performance and accelerates revenue growth.",
+      "Translate insight into clear commercial actions that drive revenue and market traction.",
+    summary:
+      "Sagasia helps clients align product, pricing, channels, and customer targeting with local market realities to build effective commercial strategies.",
     supports: [
       "Go-to-market strategy design",
       "Pricing and value proposition development",
@@ -83,7 +91,9 @@ const services = [
     title: "Execution Enablement & Strategic PMO",
     icon: "execution-enablement",
     description:
-      "We stay engaged beyond strategy to ensure initiatives are sequenced, resourced, and tracked to outcomes. Our PMO support builds cadence, accountability, and cross-market alignment for execution success.",
+      "Bridge the gap between strategy and execution to ensure momentum and accountability.",
+    summary:
+      "We support early-stage execution by structuring initiatives, governance, and performance tracking to help strategies deliver results in fast-moving markets.",
     supports: [
       "Strategy implementation support",
       "Initiative prioritization and sequencing",
@@ -100,12 +110,7 @@ export default function ServicesPage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
             <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Advisory services</p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
-            <p className="text-lg text-text-dark/70">
-              Sagasia delivers strategy, market intelligence, and execution support across Asia-Pacific growth
-              priorities. Clients engage us to translate complex market realities into clear decisions, confident
-              investments, and measurable commercial outcomes.
-            </p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Our Services</h1>
           </div>
           <HeroVisual
             src="/images/services-hero.svg"
@@ -122,6 +127,7 @@ export default function ServicesPage() {
                 <Icon name={service.icon} />
                 <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
                 <p className="text-sm text-text-dark/70">{service.description}</p>
+                <p className="text-sm text-text-dark/70">{service.summary}</p>
               </div>
               <div>
                 <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">What We Support</p>
@@ -134,18 +140,6 @@ export default function ServicesPage() {
             </Card>
           ))}
         </div>
-      </Section>
-
-      <Section>
-        <Card className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <div>
-            <h3 className="text-xl font-semibold text-text-dark">Need a custom engagement?</h3>
-            <p className="text-sm text-text-dark/70">We tailor scope, cadence, and stakeholders to your growth goals.</p>
-          </div>
-          <Link href="/contact" className={buttonClasses("primary")}>
-            Talk to Sagasia
-          </Link>
-        </Card>
       </Section>
     </div>
   );
