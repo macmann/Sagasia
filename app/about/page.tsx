@@ -127,7 +127,7 @@ export default function AboutPage() {
             <Card className="space-y-3">
               <h3 className="text-lg font-semibold text-text-dark">1. Diagnose with Local Depth:</h3>
               <p className="text-sm text-text-dark/70">
-                We begin by deeply diagnosing the client's challenge through rigorous market assessment, competitive
+                We begin by deeply diagnosing the client&apos;s challenge through rigorous market assessment, competitive
                 benchmarking, and local insight. This establishes a fact-based, granular understanding of the market
                 landscape, its unique dynamics, and the specific opportunities or threats at play.
               </p>
