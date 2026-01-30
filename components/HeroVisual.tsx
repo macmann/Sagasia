@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from "next/image";
 import { cn } from "@/lib/utils/cn";
 
 const defaultBlurDataURL =
-  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCA0MCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIGZpbGw9IiNlMmU4ZjAiLz48L3N2Zz4=";
+  "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCA0MCAzMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iMzAiIGZpbGw9IiNmNmY4ZmEiLz48L3N2Zz4=";
 
 interface HeroVisualProps {
   src: string | StaticImageData;
@@ -30,7 +30,7 @@ export function HeroVisual({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-100/80 shadow-sm",
+        "relative overflow-hidden rounded-3xl border border-border bg-section-bg shadow-sm",
         className
       )}
     >
@@ -47,7 +47,7 @@ export function HeroVisual({
       />
       {overlay ? (
         <div
-          className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-slate-900/10 via-white/10 to-white/50"
+          className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-primary/20 via-background/30 to-background/70"
           aria-hidden="true"
         />
       ) : null}

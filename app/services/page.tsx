@@ -99,9 +99,9 @@ export default function ServicesPage() {
       <Section className="section-gradient px-8">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">Advisory services</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Advisory services</p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Advisory services for growth moments</h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-text-dark/70">
               Sagasia delivers strategy, market intelligence, and execution support across Asia-Pacific growth
               priorities. Clients engage us to translate complex market realities into clear decisions, confident
               investments, and measurable commercial outcomes.
@@ -120,12 +120,12 @@ export default function ServicesPage() {
             <Card key={service.title} id={service.id} className="space-y-4">
               <div className="space-y-3">
                 <Icon name={service.icon} />
-                <h2 className="text-2xl font-semibold text-slate-900">{service.title}</h2>
-                <p className="text-sm text-slate-600">{service.description}</p>
+                <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
+                <p className="text-sm text-text-dark/70">{service.description}</p>
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-slate-500">What We Support</p>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-600">
+                <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">What We Support</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-dark/70">
                   {service.supports.map((support) => (
                     <li key={support}>{support}</li>
                   ))}
@@ -139,8 +139,8 @@ export default function ServicesPage() {
       <Section>
         <Card className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div>
-            <h3 className="text-xl font-semibold text-slate-900">Need a custom engagement?</h3>
-            <p className="text-sm text-slate-600">We tailor scope, cadence, and stakeholders to your growth goals.</p>
+            <h3 className="text-xl font-semibold text-text-dark">Need a custom engagement?</h3>
+            <p className="text-sm text-text-dark/70">We tailor scope, cadence, and stakeholders to your growth goals.</p>
           </div>
           <Link href="/contact" className={buttonClasses("primary")}>
             Talk to Sagasia

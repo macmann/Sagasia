@@ -25,7 +25,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
       <Container className="flex items-center justify-between py-4">
         <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
           <Image
@@ -38,14 +38,14 @@ export function Header() {
           />
           <span className="sr-only sm:not-sr-only">{siteConfig.name}</span>
         </Link>
-        <nav aria-label="Primary" className="hidden items-center gap-6 text-sm text-slate-700 md:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-6 text-sm text-secondary md:flex">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition hover:text-slate-900 ${active ? "text-slate-900" : ""}`}
+                className={`transition hover:text-primary ${active ? "text-primary" : ""}`}
                 aria-current={active ? "page" : undefined}
               >
                 {item.title}
@@ -56,7 +56,7 @@ export function Header() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-md border border-slate-200 px-3 py-2 text-sm font-medium text-slate-700 transition hover:text-slate-900 md:hidden"
+            className="inline-flex items-center justify-center rounded-md border border-border px-3 py-2 text-sm font-medium text-text-dark/80 transition hover:text-primary md:hidden"
             aria-expanded={isOpen}
             aria-controls="primary-navigation"
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -74,16 +74,16 @@ export function Header() {
       </Container>
       <div
         id="primary-navigation"
-        className={`border-t border-slate-200 bg-white md:hidden ${isOpen ? "block" : "hidden"}`}
+        className={`border-t border-border bg-background md:hidden ${isOpen ? "block" : "hidden"}`}
       >
-        <Container className="flex flex-col gap-4 py-4 text-sm text-slate-700">
+        <Container className="flex flex-col gap-4 py-4 text-sm text-secondary">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition hover:text-slate-900 ${active ? "text-slate-900" : ""}`}
+                className={`transition hover:text-primary ${active ? "text-primary" : ""}`}
                 aria-current={active ? "page" : undefined}
                 onClick={() => setIsOpen(false)}
               >

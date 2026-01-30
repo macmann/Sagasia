@@ -18,7 +18,7 @@ export default async function InsightsPage() {
     <div className="space-y-12">
       <Section className="space-y-4">
         <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Insights</h1>
-        <p className="text-lg text-slate-600">
+        <p className="text-lg text-text-dark/70">
           Market perspectives and advisory playbooks from the Sagasia team.
         </p>
         <InsightDisclaimer />
@@ -29,15 +29,15 @@ export default async function InsightsPage() {
           {posts.map((post) => (
             <Link key={post.slug} href={`/insights/${post.slug}`} className="group">
               <Card className="h-full">
-                <div className="flex items-center justify-between text-xs text-slate-500">
+                <div className="flex items-center justify-between text-xs text-text-dark/60">
                   <span>{new Date(post.date).toLocaleDateString()}</span>
                   {post.tags?.[0] ? <Badge>{post.tags[0]}</Badge> : null}
                 </div>
-                <div className="mt-2 text-lg font-semibold text-slate-900 group-hover:underline">
+                <div className="mt-2 text-lg font-semibold text-text-dark group-hover:underline">
                   {post.title}
                 </div>
                 {post.summary ? (
-                  <p className="mt-2 text-sm text-slate-600">{post.summary}</p>
+                  <p className="mt-2 text-sm text-text-dark/70">{post.summary}</p>
                 ) : null}
               </Card>
             </Link>

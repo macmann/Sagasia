@@ -8,7 +8,7 @@ interface ListProps extends HTMLAttributes<HTMLUListElement> {
 const CheckIcon = () => (
   <svg
     aria-hidden="true"
-    className="h-4 w-4 text-emerald-600"
+    className="h-4 w-4 text-accent"
     fill="none"
     viewBox="0 0 20 20"
   >
@@ -20,8 +20,8 @@ export function List({ items, className, ...props }: ListProps) {
   return (
     <ul className={cn("space-y-3", className)} {...props}>
       {items.map((item) => (
-        <li key={item} className="flex items-start gap-3 text-sm text-slate-700 sm:text-base">
-          <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50">
+        <li key={item} className="flex items-start gap-3 text-sm text-text-dark/80 sm:text-base">
+          <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-section-bg">
             <CheckIcon />
           </span>
           <span>{item}</span>

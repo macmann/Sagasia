@@ -3,13 +3,13 @@ import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
 
 const baseStyles =
-  "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2";
+  "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-secondary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 const variantStyles = {
-  primary: "bg-slate-900 text-white hover:bg-slate-800 focus-visible:outline-slate-900",
+  primary: "bg-cta text-white hover:bg-cta/90",
   secondary:
-    "border border-slate-200 bg-white text-slate-900 hover:border-slate-300 hover:bg-slate-50 focus-visible:outline-slate-300",
-  ghost: "text-slate-700 hover:bg-slate-100 focus-visible:outline-slate-300"
+    "border border-secondary bg-transparent text-secondary hover:bg-secondary/10",
+  ghost: "text-text-dark/70 hover:bg-section-bg"
 };
 
 export type ButtonVariant = keyof typeof variantStyles;

@@ -3,35 +3,56 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --primary: #0f8a73;
+    --primary-rgb: 15 138 115;
+    --secondary: #1a73e8;
+    --secondary-rgb: 26 115 232;
+    --accent: #7ac943;
+    --accent-rgb: 122 201 67;
+    --cta: #f7941d;
+    --cta-rgb: 247 148 29;
+    --background: #ffffff;
+    --background-rgb: 255 255 255;
+    --section-bg: #f6f8fa;
+    --section-bg-rgb: 246 248 250;
+    --text-dark: #1f2937;
+    --text-dark-rgb: 31 41 55;
+    --border: #e5e7eb;
+    --border-rgb: 229 231 235;
+    --footer-bg: #064e3b;
+    --footer-bg-rgb: 6 78 59;
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-slate-900;
+    @apply bg-background text-text-dark;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-slate-900;
+    @apply font-semibold tracking-tight text-text-dark;
   }
 
   p {
-    @apply text-slate-600;
+    @apply text-text-dark/70;
   }
 
   a {
-    @apply text-slate-900 underline-offset-4 hover:underline;
+    @apply text-secondary underline-offset-4 hover:text-primary hover:underline;
   }
 
   a:focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-slate-900 no-underline;
+    @apply outline-none ring-2 ring-secondary/40 ring-offset-2 ring-offset-background no-underline;
   }
 
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible,
   button:focus-visible {
-    @apply outline outline-2 outline-offset-2 outline-slate-400;
+    @apply outline-none ring-2 ring-secondary/40 ring-offset-2 ring-offset-background border-secondary;
   }
 }
 
@@ -43,8 +64,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
-  border: 1px solid rgb(226 232 240);
-  background: linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(241, 245, 249, 0.9));
+  border: 1px solid var(--border);
+  background: linear-gradient(135deg, var(--section-bg), var(--background));
 }
 
 .section-gradient::after {
@@ -53,7 +74,7 @@
   inset: -20% 40% auto auto;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(148, 163, 184, 0.2), transparent 70%);
+  background: radial-gradient(circle, rgba(15, 138, 115, 0.18), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -67,8 +88,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 1.5rem;
-  border: 1px solid rgb(226 232 240);
-  background-color: rgba(248, 250, 252, 0.9);
-  background-image: radial-gradient(rgba(148, 163, 184, 0.25) 1px, transparent 0);
+  border: 1px solid var(--border);
+  background-color: var(--section-bg);
+  background-image: radial-gradient(rgba(15, 138, 115, 0.18) 1px, transparent 0);
   background-size: 22px 22px;
 }
