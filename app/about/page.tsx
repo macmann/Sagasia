@@ -35,18 +35,23 @@ export default function AboutPage() {
               Company Overview
             </h1>
             <p className="text-lg text-text-dark/70">
-              Sagasia began operations in 2025 to support companies with practical, insight-driven guidance for
-              entering and growing in Asia Pacific markets. Drawing on experience from 100+ strategy advisory and
-              market-entry projects across Asia, the firm delivers strategy, market validation, and competitor
-              intelligence grounded in primary research and local access. Today, Sagasia works with regional and
-              international clients across key industries to shape growth decisions, validate investment
-              opportunities, and support execution across ASEAN and adjacent markets.
+              Sagasia partners with leadership teams to enter, grow, and compete in Asia-Pacific markets with
+              practical, insight-led guidance.
             </p>
-            <p className="border-l-2 border-border pl-4 text-base text-text-dark/70">
-              Core Services: Strategy &amp; Growth Advisory, Market Entry &amp; Expansion, Competitor Intelligence
-              <br />
-              Industry Coverage: Consumer &amp; Retail, Energy, Automotive, Industrials, Healthcare, Investment,
-            </p>
+            <ul className="space-y-2 text-base text-text-dark/70">
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                <span>100+ strategy advisory and market-entry engagements across Asia.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                <span>Primary research and local access to validate opportunities.</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+                <span>Execution support across ASEAN and adjacent markets.</span>
+              </li>
+            </ul>
           </div>
           <HeroVisual
             src="/images/about-hero.svg"
