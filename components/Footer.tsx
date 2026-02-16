@@ -18,7 +18,7 @@ export function Footer() {
                   {siteConfig.email}
                 </a>
               </p>
-              <p>
+              <p className="text-white">
                 <span className="font-semibold text-white">Address:</span>{" "}
                 {siteConfig.officeLocation}
               </p>
@@ -28,7 +28,7 @@ export function Footer() {
                   {siteConfig.phone}
                 </a>
               </p>
-              <p>
+              <p className="text-white">
                 <span className="font-semibold text-white">Coverage:</span> {siteConfig.coverage}
               </p>
             </div>

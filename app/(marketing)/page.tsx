@@ -59,7 +59,10 @@ export default function MarketingHomePage() {
                 <Link href="/services" className={buttonClasses("primary")}>
                   Explore our services
                 </Link>
-                <Link href="/contact" className={buttonClasses("secondary", "border-white text-white hover:bg-white/10")}>
+                <Link
+                  href="/contact"
+                  className={buttonClasses("secondary", "border-[#7ec8ff] bg-[#7ec8ff] text-[#0b1f3a] hover:bg-[#9dd8ff]")}
+                >
                   Contact SCP Advisory
                 </Link>
               </div>
