@@ -25,18 +25,18 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight">
+        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight no-underline hover:no-underline">
           <Image
-            src="/images/sagasia-logo.svg"
-            alt="Sagasia"
-            width={48}
-            height={48}
-            className="h-12 w-auto"
+            src="/images/scp-logo.svg"
+            alt="SCP Advisory"
+            width={180}
+            height={44}
+            className="h-11 w-auto"
             priority
           />
-          <span className="sr-only sm:not-sr-only">{siteConfig.name}</span>
+          <span className="sr-only">{siteConfig.name}</span>
         </Link>
         <nav aria-label="Primary" className="hidden items-center gap-6 text-sm text-secondary md:flex">
           {navItems.map((item) => {
@@ -64,12 +64,7 @@ export function Header() {
           >
             {isOpen ? "Close" : "Menu"}
           </button>
-          <Link href="/contact" className={buttonClasses("secondary", "hidden sm:inline-flex")}>
-            Let’s talk
-          </Link>
-          <Link href="/contact" className={buttonClasses("primary")}>
-            Start a project
-          </Link>
+          <Link href="/contact" className={buttonClasses("primary")}>Book an intro call</Link>
         </div>
       </Container>
       <div
