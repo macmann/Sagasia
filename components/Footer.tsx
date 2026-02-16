@@ -12,13 +12,12 @@ export function Footer() {
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/sagasia-logo.svg"
-                alt="Sagasia"
-                width={44}
+                src="/images/scp-logo.svg"
+                alt="SCP Advisory"
+                width={180}
                 height={44}
                 className="h-11 w-auto"
               />
-              <div className="text-lg font-semibold text-white">{siteConfig.name}</div>
             </div>
             <p className="text-sm text-white/80">{siteConfig.description}</p>
             <div className="space-y-1 text-sm text-white/80">
@@ -65,7 +64,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-6 text-xs text-white/70 sm:flex-row">
           <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
-          <span>Built for ambitious teams.</span>
+          <span>Independent advice for consequential decisions.</span>
         </div>
       </Container>
     </footer>

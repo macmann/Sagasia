@@ -1,139 +1,90 @@
-import { Card } from "@/components/Card";
-import { HeroVisual } from "@/components/HeroVisual";
-import { Icon } from "@/components/Icon";
-import { Section } from "@/components/Section";
 import type { Metadata } from "next";
+import { Card } from "@/components/Card";
+import { Section } from "@/components/Section";
 
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "Explore Sagasia advisory services spanning strategy, market entry, competitive intelligence, and execution support."
+  description: "Structured strategy, transaction, operational, and transformation advisory services by SCP Advisory."
 };
 
-const services = [
+const serviceDetails = [
   {
-    id: "strategy-growth-advisory",
-    title: "Strategy & Growth Advisory",
-    icon: "strategy-growth",
+    title: "Strategy Advisory",
     description:
-      "Shape clear, fact-based strategies to drive sustainable growth and competitive advantage across Asia-Pacific.",
-    summary:
-      "Sagasia supports leadership teams on corporate and business strategy, growth prioritization, and capital allocation decisions. Our work focuses on clarifying strategic direction and translating ambition into executable growth pathways.",
-    supports: [
+      "Support leadership teams in defining clear strategic direction and priorities. SCP Advisory helps clients assess options, evaluate trade-offs, and develop fact-based strategies aligned with capabilities and market realities.",
+    offers: [
       "Corporate and business unit strategy",
-      "Growth roadmap and market prioritization",
-      "Investment thesis and portfolio strategy",
-      "New business model assessment",
-    ],
+      "Growth and expansion planning",
+      "Strategic reviews and scenario assessment"
+    ]
   },
   {
-    id: "market-entry-expansion",
-    title: "Market Entry & Expansion",
-    icon: "market-entry",
+    title: "Financial & Transaction Advisory",
     description:
-      "Reduce entry risk and accelerate execution when entering or scaling in ASEAN and APAC markets.",
-    summary:
-      "We help clients validate market attractiveness, understand local dynamics, and design entry or expansion strategies grounded in primary research and operational feasibility.",
-    supports: [
-      "Market sizing and demand validation",
-      "Go-to-market and route-to-market design",
-      "Partner, distributor, or acquisition screening",
-      "ASEAN expansion planning",
-    ],
+      "Provide analytical and commercial support for investment, acquisition, and divestment decisions. Our work focuses on understanding value drivers, risks, and deal implications before commitments are made.",
+    offers: [
+      "Commercial due diligence",
+      "Market and competitive assessment",
+      "Deal evaluation and value drivers analysis"
+    ]
   },
   {
-    id: "competitor-market-intelligence",
-    title: "Competitor & Market Intelligence",
-    icon: "competitor-intelligence",
+    title: "Operational Advisory",
     description:
-      "Deliver independent, decision-grade intelligence on competitors, customers, and market structure.",
-    summary:
-      "Sagasia provides objective competitor and market insight to inform strategic positioning, pricing decisions, and competitive response strategies.",
-    supports: [
-      "Competitor benchmarking and positioning",
-      "Pricing and value-chain analysis",
-      "Channel and customer behavior mapping",
-      "Market structure and dynamics assessment",
-    ],
+      "Help organizations improve performance by addressing structural, process, and execution challenges. SCP Advisory works with management to identify practical improvements and support implementation.",
+    offers: [
+      "Operating model and process review",
+      "Cost and efficiency initiatives",
+      "Performance management support"
+    ]
   },
   {
-    id: "commercial-due-diligence",
-    title: "Commercial Due Diligence & Opportunity Assessment",
-    icon: "commercial-due-diligence",
+    title: "Transformation & Execution Support",
     description:
-      "Support confident investment and strategic decisions with rigorous, primary-research-led diligence.",
-    summary:
-      "We assist corporates and investors in assessing market opportunities, risks, and upside potential prior to capital deployment or strategic commitment.",
-    supports: [
-      "Commercial due diligence for M&A or investments",
-      "Market attractiveness and growth validation",
-      "Revenue and demand assessment",
-      "Risk and sensitivity analysis",
-    ],
-  },
-  {
-    id: "go-to-market-strategy",
-    title: "Go-to-Market & Commercial Strategy",
-    icon: "go-to-market",
-    description:
-      "Translate insight into clear commercial actions that drive revenue and market traction.",
-    summary:
-      "Sagasia helps clients align product, pricing, channels, and customer targeting with local market realities to build effective commercial strategies.",
-    supports: [
-      "Go-to-market strategy design",
-      "Pricing and value proposition development",
-      "Channel and partner strategy",
-      "Sales model optimization",
-    ],
-  },
-  {
-    id: "execution-enablement",
-    title: "Execution Enablement & Strategic PMO",
-    icon: "execution-enablement",
-    description:
-      "Bridge the gap between strategy and execution to ensure momentum and accountability.",
-    summary:
-      "We support early-stage execution by structuring initiatives, governance, and performance tracking to help strategies deliver results in fast-moving markets.",
-    supports: [
-      "Strategy implementation support",
-      "Initiative prioritization and sequencing",
-      "KPI and performance tracking",
-      "Cross-market execution coordination",
-    ],
-  },
+      "Bridge strategy and execution during periods of change. We support clients in structuring initiatives, maintaining momentum, and ensuring accountability across complex programs.",
+    offers: [
+      "Transformation roadmap design",
+      "Program governance and tracking",
+      "Management support during execution"
+    ]
+  }
 ];
 
 export default function ServicesPage() {
   return (
-    <div className="space-y-16">
-      <Section className="section-gradient px-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">Advisory services</p>
-            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">Our Services</h1>
+    <div className="space-y-14">
+      <Section className="pt-4">
+        <div
+          className="relative overflow-hidden rounded-3xl border border-border bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=2000')"
+          }}
+        >
+          <div className="p-8 sm:p-12 lg:p-16">
+            <div className="max-w-3xl rounded-2xl bg-[#0b1f3a]/78 p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85">Page 2 — Services</p>
+              <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Our Services</h1>
+              <p className="mt-4 text-base text-white/90 sm:text-lg">
+                SCP Advisory provides structured, practical support across strategy, transactions, operations, and
+                transformation execution.
+              </p>
+            </div>
           </div>
-          <HeroVisual
-            src="/images/services-hero.svg"
-            alt="Illustration of consulting services and growth enablement"
-          />
         </div>
       </Section>
 
-      <Section className="section-dots px-8">
+      <Section className="section-dots px-8" title="Service Overview">
         <div className="space-y-6">
-          {services.map((service) => (
-            <Card key={service.title} id={service.id} className="space-y-4">
-              <div className="space-y-3">
-                <Icon name={service.icon} />
-                <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
-                <p className="text-sm text-text-dark/70">{service.description}</p>
-                <p className="text-sm text-text-dark/70">{service.summary}</p>
-              </div>
+          {serviceDetails.map((service) => (
+            <Card key={service.title} className="space-y-4">
+              <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
+              <p className="text-base leading-7 text-text-dark/80">{service.description}</p>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/60">What We Support</p>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-dark/70">
-                  {service.supports.map((support) => (
-                    <li key={support}>{support}</li>
+                <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/70">What We Offer</p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-text-dark/80">
+                  {service.offers.map((offer) => (
+                    <li key={offer}>{offer}</li>
                   ))}
                 </ul>
               </div>

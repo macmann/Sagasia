@@ -1,13 +1,13 @@
 export const siteConfig = {
-  name: "Sagasia",
-  companyName: "Sagasia",
+  name: "SCP Advisory",
+  companyName: "SCP Advisory",
   description:
-    "Sagasia is a strategic advisory and growth partner helping leadership teams sharpen narrative, accelerate commercial momentum, and build enduring market relevance.",
-  url: "https://sagasia.com",
-  tagline: "Advisory, strategy, and growth execution for modern leaders",
-  email: "info@sagasia.com",
-  officeLocation: "Hong Kong",
-  coverage: "ASEAN and Asia-Pacific",
+    "SCP Advisory is an independent strategy and advisory firm supporting leadership teams, investors, and founders on high-stakes decisions.",
+  url: "https://scpadvisory.com",
+  tagline: "Independent strategy, transaction, and operational advisory",
+  email: "info@scpadvisory.com",
+  officeLocation: "Singapore",
+  coverage: "Regional and cross-border engagements",
   social: {
     linkedin: "#",
     twitter: "#",
