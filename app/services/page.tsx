@@ -10,6 +10,9 @@ export const metadata: Metadata = {
 const serviceDetails = [
   {
     title: "Strategy Advisory",
+    image:
+      "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    imageAlt: "Leadership team discussing strategic priorities in a boardroom",
     description:
       "Support leadership teams in defining clear strategic direction and priorities. SCP Advisory helps clients assess options, evaluate trade-offs, and develop fact-based strategies aligned with capabilities and market realities.",
     offers: [
@@ -20,6 +23,9 @@ const serviceDetails = [
   },
   {
     title: "Financial & Transaction Advisory",
+    image:
+      "https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    imageAlt: "Finance professionals reviewing transaction and valuation documents",
     description:
       "Provide analytical and commercial support for investment, acquisition, and divestment decisions. Our work focuses on understanding value drivers, risks, and deal implications before commitments are made.",
     offers: [
@@ -30,6 +36,9 @@ const serviceDetails = [
   },
   {
     title: "Operational Advisory",
+    image:
+      "https://images.pexels.com/photos/7681674/pexels-photo-7681674.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    imageAlt: "Team collaborating on operational planning around a laptop",
     description:
       "Help organizations improve performance by addressing structural, process, and execution challenges. SCP Advisory works with management to identify practical improvements and support implementation.",
     offers: [
@@ -40,6 +49,9 @@ const serviceDetails = [
   },
   {
     title: "Transformation & Execution Support",
+    image:
+      "https://images.pexels.com/photos/8297057/pexels-photo-8297057.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    imageAlt: "Project team tracking transformation milestones on a digital dashboard",
     description:
       "Bridge strategy and execution during periods of change. We support clients in structuring initiatives, maintaining momentum, and ensuring accountability across complex programs.",
     offers: [
@@ -77,16 +89,26 @@ export default function ServicesPage() {
       <Section className="section-dots px-8" title="Service Overview">
         <div className="space-y-6">
           {serviceDetails.map((service) => (
-            <Card key={service.title} className="space-y-4">
-              <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
-              <p className="text-base leading-7 text-text-dark/80">{service.description}</p>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/70">What We Offer</p>
-                <ul className="mt-3 list-disc space-y-2 pl-5 text-text-dark/80">
-                  {service.offers.map((offer) => (
-                    <li key={offer}>{offer}</li>
-                  ))}
-                </ul>
+            <Card key={service.title} className="overflow-hidden">
+              <div className="flex flex-col gap-4 sm:flex-row sm:items-stretch sm:gap-6">
+                <div className="space-y-4 sm:flex-1">
+                  <h2 className="text-2xl font-semibold text-text-dark">{service.title}</h2>
+                  <p className="text-base leading-7 text-text-dark/80">{service.description}</p>
+                  <div>
+                    <p className="text-sm font-semibold uppercase tracking-wide text-text-dark/70">What We Offer</p>
+                    <ul className="mt-3 list-disc space-y-2 pl-5 text-text-dark/80">
+                      {service.offers.map((offer) => (
+                        <li key={offer}>{offer}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  role="img"
+                  aria-label={service.imageAlt}
+                  className="h-44 w-full rounded-xl bg-cover bg-center sm:h-auto sm:w-64 sm:self-stretch lg:w-72"
+                  style={{ backgroundImage: `url('${service.image}')` }}
+                />
               </div>
             </Card>
           ))}
