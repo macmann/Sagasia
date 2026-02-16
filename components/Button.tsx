@@ -6,9 +6,9 @@ const baseStyles =
   "inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition focus-visible:ring-2 focus-visible:ring-secondary/40 focus-visible:ring-offset-2 focus-visible:ring-offset-background";
 
 const variantStyles = {
-  primary: "bg-cta text-white hover:bg-cta/90",
+  primary: "bg-secondary text-white hover:bg-secondary/90",
   secondary:
-    "border border-secondary bg-transparent text-secondary hover:bg-secondary/10",
+    "border border-secondary bg-white text-secondary hover:bg-secondary/10",
   ghost: "text-text-dark/70 hover:bg-section-bg"
 };
 

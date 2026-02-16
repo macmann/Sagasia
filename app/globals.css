@@ -4,24 +4,24 @@
 
 @layer base {
   :root {
-    --primary: #0f8a73;
-    --primary-rgb: 15 138 115;
-    --secondary: #1a73e8;
-    --secondary-rgb: 26 115 232;
-    --accent: #7ac943;
-    --accent-rgb: 122 201 67;
-    --cta: #f7941d;
-    --cta-rgb: 247 148 29;
+    --primary: #0b1f3a;
+    --primary-rgb: 11 31 58;
+    --secondary: #1d4ed8;
+    --secondary-rgb: 29 78 216;
+    --accent: #3b82f6;
+    --accent-rgb: 59 130 246;
+    --cta: #1d4ed8;
+    --cta-rgb: 29 78 216;
     --background: #ffffff;
     --background-rgb: 255 255 255;
-    --section-bg: #f6f8fa;
-    --section-bg-rgb: 246 248 250;
+    --section-bg: #f3f6fc;
+    --section-bg-rgb: 243 246 252;
     --text-dark: #1f2937;
     --text-dark-rgb: 31 41 55;
-    --border: #e5e7eb;
-    --border-rgb: 229 231 235;
-    --footer-bg: #064e3b;
-    --footer-bg-rgb: 6 78 59;
+    --border: #dbe5f4;
+    --border-rgb: 219 229 244;
+    --footer-bg: #0b1f3a;
+    --footer-bg-rgb: 11 31 58;
   }
 
   html {
@@ -74,7 +74,7 @@
   inset: -20% 40% auto auto;
   width: 320px;
   height: 320px;
-  background: radial-gradient(circle, rgba(15, 138, 115, 0.18), transparent 70%);
+  background: radial-gradient(circle, rgba(29, 78, 216, 0.16), transparent 70%);
   pointer-events: none;
   z-index: 0;
 }
@@ -90,6 +90,6 @@
   border-radius: 1.5rem;
   border: 1px solid var(--border);
   background-color: var(--section-bg);
-  background-image: radial-gradient(rgba(15, 138, 115, 0.18) 1px, transparent 0);
+  background-image: radial-gradient(rgba(29, 78, 216, 0.16) 1px, transparent 0);
   background-size: 22px 22px;
 }
