@@ -73,7 +73,7 @@ export function Header() {
             {isOpen ? "Close" : "Menu"}
           </button>
           <Link href="/contact" className={buttonClasses("primary")}>
-            Book an intro call
+            Contact Us
           </Link>
         </div>
       </Container>
