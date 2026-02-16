@@ -16,7 +16,8 @@ const initialState: ContactActionState = {
 
 const successMessage = "Thanks for reaching out. Our team will respond within two business days.";
 const genericErrorMessage = "We couldn't submit your request right now. Please try again shortly.";
-const missingEndpointMessage = "This form isn't configured yet. Please email info@sagasia.com.";
+const missingEndpointMessage =
+  "This form isn't configured yet. Please email info@scp-advisory.com.";
 
 type FieldProps = {
   id: string;
@@ -59,7 +60,11 @@ type SubmitButtonProps = {
 
 function SubmitButton({ isSubmitting }: SubmitButtonProps) {
   return (
-    <Button type="submit" disabled={isSubmitting} className={isSubmitting ? "opacity-70" : undefined}>
+    <Button
+      type="submit"
+      disabled={isSubmitting}
+      className={isSubmitting ? "opacity-70" : undefined}
+    >
       {isSubmitting ? "Sending..." : "Send inquiry"}
     </Button>
   );
@@ -149,7 +154,8 @@ export function ContactForm() {
           </div>
         ) : null}
         <p className="text-sm text-text-dark/70">
-          Please share a brief overview of your situation so we can direct your inquiry appropriately.
+          Please share a brief overview of your situation so we can direct your inquiry
+          appropriately.
         </p>
         <Field
           id="name"
@@ -163,17 +169,23 @@ export function ContactForm() {
             id="company"
             label="Company"
             name="company"
-            placeholder="Sagasia"
+            placeholder="SCP Advisory"
             error={state.fieldErrors.company}
           />
-          <Field id="role" label="Role" name="role" placeholder="Director" error={state.fieldErrors.role} />
+          <Field
+            id="role"
+            label="Role"
+            name="role"
+            placeholder="Director"
+            error={state.fieldErrors.role}
+          />
         </div>
         <Field
           id="email"
           label="Email Address"
           name="email"
           type="email"
-          placeholder="you@sagasia.com"
+          placeholder="you@company.com"
           error={state.fieldErrors.email}
         />
         <div className="grid gap-4 sm:grid-cols-2">

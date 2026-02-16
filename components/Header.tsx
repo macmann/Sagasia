@@ -27,32 +27,40 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <Container className="flex items-center justify-between py-4">
-        <Link href="/" className="flex items-center gap-3 text-lg font-semibold tracking-tight no-underline hover:no-underline">
-          <Image
-            src="/images/scp-logo.svg"
-            alt="SCP Advisory"
-            width={180}
-            height={44}
-            className="h-11 w-auto"
-            priority
-          />
-          <span className="sr-only">{siteConfig.name}</span>
-        </Link>
-        <nav aria-label="Primary" className="hidden items-center gap-6 text-sm text-secondary md:flex">
-          {navItems.map((item) => {
-            const active = isActive(item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`transition hover:text-primary ${active ? "text-primary" : ""}`}
-                aria-current={active ? "page" : undefined}
-              >
-                {item.title}
-              </Link>
-            );
-          })}
-        </nav>
+        <div className="flex items-center gap-8 lg:gap-12">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-lg font-semibold tracking-tight no-underline hover:no-underline"
+          >
+            <Image
+              src="/images/scp-logo.svg"
+              alt="SCP Advisory"
+              width={180}
+              height={44}
+              className="h-11 w-auto"
+              priority
+            />
+            <span className="sr-only">{siteConfig.name}</span>
+          </Link>
+          <nav
+            aria-label="Primary"
+            className="hidden items-center gap-7 text-left text-base font-bold text-[#0b2e63] md:flex"
+          >
+            {navItems.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`transition hover:text-[#082349] ${active ? "text-[#082349]" : ""}`}
+                  aria-current={active ? "page" : undefined}
+                >
+                  {item.title}
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -64,21 +72,23 @@ export function Header() {
           >
             {isOpen ? "Close" : "Menu"}
           </button>
-          <Link href="/contact" className={buttonClasses("primary")}>Book an intro call</Link>
+          <Link href="/contact" className={buttonClasses("primary")}>
+            Book an intro call
+          </Link>
         </div>
       </Container>
       <div
         id="primary-navigation"
         className={`border-t border-border bg-background md:hidden ${isOpen ? "block" : "hidden"}`}
       >
-        <Container className="flex flex-col gap-4 py-4 text-sm text-secondary">
+        <Container className="flex flex-col gap-4 py-4 text-sm font-semibold text-[#0b2e63]">
           {navItems.map((item) => {
             const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition hover:text-primary ${active ? "text-primary" : ""}`}
+                className={`transition hover:text-[#082349] ${active ? "text-[#082349]" : ""}`}
                 aria-current={active ? "page" : undefined}
                 onClick={() => setIsOpen(false)}
               >

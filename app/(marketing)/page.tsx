@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
@@ -11,10 +12,26 @@ export const metadata: Metadata = {
 };
 
 const coreServices = [
-  "Strategy Advisory – Corporate strategy, growth priorities, and strategic planning",
-  "Financial & Transaction Advisory – M&A support, commercial due diligence, valuation insights",
-  "Operational Advisory – Performance improvement, operating model design, execution support",
-  "Transformation Support – Change initiatives, program structuring, and delivery oversight"
+  {
+    title: "Strategy Advisory",
+    description: "Corporate strategy, growth priorities, and strategic planning.",
+    icon: "/images/icons/services/strategy-growth.svg"
+  },
+  {
+    title: "Financial & Transaction Advisory",
+    description: "M&A support, commercial due diligence, and valuation insights.",
+    icon: "/images/icons/services/commercial-due-diligence.svg"
+  },
+  {
+    title: "Operational Advisory",
+    description: "Performance improvement, operating model design, and execution support.",
+    icon: "/images/icons/services/go-to-market.svg"
+  },
+  {
+    title: "Transformation Support",
+    description: "Change initiatives, program structuring, and delivery oversight.",
+    icon: "/images/icons/services/execution-enablement.svg"
+  }
 ];
 
 export default function MarketingHomePage() {
@@ -72,21 +89,24 @@ export default function MarketingHomePage() {
         </p>
       </Section>
 
-      <Section className="px-2" title="Our Services" subtitle="Focused advisory support tailored to each client’s objectives and stage.">
-        <Card className="space-y-5">
-          <p className="text-base leading-7 text-text-dark/80">
-            SCP Advisory provides focused advisory services designed to support decision-making, value creation, and
-            execution. Our offerings are flexible and adapted to each client’s priorities.
-          </p>
-          <div>
-            <h3 className="text-lg font-semibold text-text-dark">Core Services</h3>
-            <ul className="mt-3 list-disc space-y-2 pl-5 text-text-dark/80">
-              {coreServices.map((service) => (
-                <li key={service}>{service}</li>
-              ))}
-            </ul>
-          </div>
-        </Card>
+      <Section
+        className="px-2"
+        title="Our Services"
+        subtitle="Focused advisory support tailored to each client’s objectives and stage."
+      >
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {coreServices.map((service) => (
+            <Card key={service.title} className="h-full space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-section-bg">
+                  <Image src={service.icon} alt={service.title} width={22} height={22} className="h-5 w-5" />
+                </div>
+                <h3 className="text-base font-semibold text-text-dark">{service.title}</h3>
+              </div>
+              <p className="text-sm leading-6 text-text-dark/80">{service.description}</p>
+            </Card>
+          ))}
+        </div>
       </Section>
     </div>
   );

@@ -61,8 +61,9 @@ export default function ServicesPage() {
               "url('https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=2000')"
           }}
         >
-          <div className="p-8 sm:p-12 lg:p-16">
-            <div className="max-w-3xl rounded-2xl bg-[#0b1f3a]/78 p-6 sm:p-8">
+          <div className="absolute inset-0 bg-[#0b1f3a]/35" aria-hidden="true" />
+          <div className="relative z-10 p-8 sm:p-12 lg:p-16">
+            <div className="max-w-3xl rounded-2xl bg-[#0b1f3a]/80 p-6 sm:p-8">
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-white/85">Page 2 — Services</p>
               <h1 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Our Services</h1>
               <p className="mt-4 text-base text-white/90 sm:text-lg">

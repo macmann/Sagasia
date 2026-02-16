@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { footerNav } from "@/lib/nav";
 import { siteConfig } from "@/lib/siteConfig";
@@ -10,15 +9,7 @@ export function Footer() {
       <Container className="space-y-8 py-10">
         <div className="grid gap-8 md:grid-cols-[2fr_1fr_1fr]">
           <div className="space-y-3">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/scp-logo.svg"
-                alt="SCP Advisory"
-                width={180}
-                height={44}
-                className="h-11 w-auto"
-              />
-            </div>
+            <div className="text-lg font-semibold text-white">{siteConfig.name}</div>
             <p className="text-sm text-white/80">{siteConfig.description}</p>
             <div className="space-y-1 text-sm text-white/80">
               <p>
@@ -28,12 +19,17 @@ export function Footer() {
                 </a>
               </p>
               <p>
-                <span className="font-semibold text-white">Office:</span>{" "}
+                <span className="font-semibold text-white">Address:</span>{" "}
                 {siteConfig.officeLocation}
               </p>
               <p>
-                <span className="font-semibold text-white">Coverage:</span>{" "}
-                {siteConfig.coverage}
+                <span className="font-semibold text-white">Phone:</span>{" "}
+                <a className="text-white/80 hover:text-accent" href={`tel:${siteConfig.phone}`}>
+                  {siteConfig.phone}
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-white">Coverage:</span> {siteConfig.coverage}
               </p>
             </div>
           </div>
@@ -63,7 +59,9 @@ export function Footer() {
           </div>
         </div>
         <div className="flex flex-col items-start justify-between gap-2 border-t border-white/10 pt-6 text-xs text-white/70 sm:flex-row">
-          <span>© {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+          </span>
           <span>Independent advice for consequential decisions.</span>
         </div>
       </Container>
