@@ -34,7 +34,7 @@ export function Header() {
             <img
               src="https://i.ibb.co/ZRRy2B6F/629932390-1958840391509604-5688431642496758750-n.jpg"
               alt="629932390-1958840391509604-5688431642496758750-n"
-              className="h-11 w-auto"
+              className="h-[3.3rem] w-auto"
             />
             <span className="sr-only">{siteConfig.name}</span>
           </a>
