@@ -49,9 +49,6 @@ export default function ContactPage() {
                   <span className="font-semibold text-text-dark">Address:</span>{" "}
                   {siteConfig.officeLocation}
                 </li>
-                <li>
-                  <span className="font-semibold text-text-dark">Phone:</span> {siteConfig.phone}
-                </li>
               </ul>
             </div>
             <div>
