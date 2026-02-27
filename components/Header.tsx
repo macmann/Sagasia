@@ -27,8 +27,8 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <Container className="flex items-center justify-between py-4">
         <div className="flex items-center gap-8 lg:gap-12">
-          <a
-            href="https://ibb.co/4wwB18ZX"
+          <Link
+            href="/"
             className="flex items-center gap-3 text-lg font-semibold tracking-tight no-underline hover:no-underline"
           >
             <img
@@ -37,7 +37,7 @@ export function Header() {
               className="h-[3.3rem] w-auto"
             />
             <span className="sr-only">{siteConfig.name}</span>
-          </a>
+          </Link>
           <nav
             aria-label="Primary"
             className="hidden items-center gap-7 text-left text-base font-bold text-[#0b2e63] md:flex"
