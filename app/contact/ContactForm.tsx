@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { siteConfig } from "@/lib/siteConfig";
 import type { ContactActionState, ContactPayload } from "./actions";
 import { getContactPayload, validateContactPayload } from "./actions";
 
