@@ -68,9 +68,8 @@ Supported configuration options:
 
 - `NEXT_PUBLIC_CONTACT_ENDPOINT`: Explicit API endpoint to receive contact submissions.
 - `NEXT_PUBLIC_CONTACT_PROVIDER=formsubmit` with `NEXT_PUBLIC_CONTACT_MAILBOX=<your@email.com>`: Auto-builds a FormSubmit endpoint (`https://formsubmit.co/ajax/<mailbox>`) so submissions are delivered to your mailbox.
-- If mailbox is not set, the form falls back to `siteConfig.email` (`info@scp-advisory.com`) for FormSubmit delivery.
 
-For explicit mailbox routing on Render, set these environment variables in **Render Dashboard → Static Site → Environment**:
+For a no-backend mailbox setup on Render, set these environment variables in **Render Dashboard → Static Site → Environment**:
 
 ```
 NEXT_PUBLIC_CONTACT_PROVIDER=formsubmit

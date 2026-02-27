@@ -29,9 +29,8 @@ function buildContactEndpoint() {
     return explicitEndpoint;
   }
 
-  const provider =
-    (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "formsubmit";
-  const mailbox = process.env.NEXT_PUBLIC_CONTACT_MAILBOX?.trim() ?? siteConfig.email;
+  const provider = (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "generic";
+  const mailbox = process.env.NEXT_PUBLIC_CONTACT_MAILBOX?.trim() ?? "";
 
   if (provider === "formsubmit" && mailbox) {
     return `https://formsubmit.co/ajax/${encodeURIComponent(mailbox)}`;
@@ -92,11 +91,9 @@ function SubmitButton({ isSubmitting }: SubmitButtonProps) {
 }
 
 async function sendContactRequest(payload: ContactPayload, endpoint: string) {
-  const provider =
-    (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "generic";
-  const isFormSubmitEndpoint = endpoint.includes("formsubmit.co/ajax/");
+  const provider = (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "generic";
 
-  if (provider === "formsubmit" || isFormSubmitEndpoint) {
+  if (provider === "formsubmit") {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
