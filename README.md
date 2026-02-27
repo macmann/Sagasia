@@ -18,6 +18,8 @@ Open:
 - Insights: http://localhost:3000/insights
 - Contact: http://localhost:3000/contact
 
+Copy `.env.example` to `.env.local` to configure optional contact form delivery variables for local testing.
+
 ## Build + start
 
 ```bash
@@ -56,6 +58,29 @@ Render can host the app as a static site using the Next.js export output.
 4. Set the **Environment** to **Node 20** (matches `package.json` engines).
 
 After deploy, Render will serve the pre-rendered static output from `out/`.
+
+
+### Contact form delivery (Render static site)
+
+Because this is a static deployment, the contact form must post to an external endpoint.
+
+Supported configuration options:
+
+- `NEXT_PUBLIC_CONTACT_ENDPOINT`: Explicit API endpoint to receive contact submissions.
+- `NEXT_PUBLIC_CONTACT_PROVIDER=formsubmit` with `NEXT_PUBLIC_CONTACT_MAILBOX=<your@email.com>`: Auto-builds a FormSubmit endpoint (`https://formsubmit.co/ajax/<mailbox>`) so submissions are delivered to your mailbox.
+- If mailbox is not set, the form falls back to `siteConfig.email` (`info@scp-advisory.com`) for FormSubmit delivery.
+
+For explicit mailbox routing on Render, set these environment variables in **Render Dashboard → Static Site → Environment**:
+
+```
+NEXT_PUBLIC_CONTACT_PROVIDER=formsubmit
+NEXT_PUBLIC_CONTACT_MAILBOX=you@yourdomain.com
+```
+
+- `NEXT_PUBLIC_CONTACT_MAILBOX` is the mailbox that receives contact entries.
+- For local testing, place the same values in `.env.local` at the repo root before running `npm run dev`.
+
+Then redeploy and submit `/contact` once. FormSubmit may require confirming the mailbox on first submission.
 
 ## Playwright smoke tests
 

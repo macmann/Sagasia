@@ -5,6 +5,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { siteConfig } from "@/lib/siteConfig";
 import type { ContactActionState, ContactPayload } from "./actions";
 import { getContactPayload, validateContactPayload } from "./actions";
 
@@ -17,7 +18,27 @@ const initialState: ContactActionState = {
 const successMessage = "Thanks for reaching out. Our team will respond within two business days.";
 const genericErrorMessage = "We couldn't submit your request right now. Please try again shortly.";
 const missingEndpointMessage =
-  "This form isn't configured yet. Please email info@scp-advisory.com.";
+  "This form isn't configured yet. Set NEXT_PUBLIC_CONTACT_ENDPOINT or configure NEXT_PUBLIC_CONTACT_PROVIDER=formsubmit with NEXT_PUBLIC_CONTACT_MAILBOX.";
+
+type ContactProvider = "generic" | "formsubmit";
+
+function buildContactEndpoint() {
+  const explicitEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT?.trim() ?? "";
+
+  if (explicitEndpoint) {
+    return explicitEndpoint;
+  }
+
+  const provider =
+    (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "formsubmit";
+  const mailbox = process.env.NEXT_PUBLIC_CONTACT_MAILBOX?.trim() ?? siteConfig.email;
+
+  if (provider === "formsubmit" && mailbox) {
+    return `https://formsubmit.co/ajax/${encodeURIComponent(mailbox)}`;
+  }
+
+  return "";
+}
 
 type FieldProps = {
   id: string;
@@ -71,6 +92,32 @@ function SubmitButton({ isSubmitting }: SubmitButtonProps) {
 }
 
 async function sendContactRequest(payload: ContactPayload, endpoint: string) {
+  const provider =
+    (process.env.NEXT_PUBLIC_CONTACT_PROVIDER?.trim() as ContactProvider | undefined) ?? "generic";
+  const isFormSubmitEndpoint = endpoint.includes("formsubmit.co/ajax/");
+
+  if (provider === "formsubmit" || isFormSubmitEndpoint) {
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        ...payload,
+        _subject: `Website inquiry from ${payload.name}`,
+        _captcha: "false",
+        _template: "table",
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
+
+    return;
+  }
+
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
@@ -91,7 +138,7 @@ export function ContactForm() {
   const searchParams = useSearchParams();
   const reason = searchParams.get("reason");
   const defaultInquiryType = reason === "download" ? "download" : "";
-  const contactEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT ?? "";
+  const contactEndpoint = buildContactEndpoint();
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
